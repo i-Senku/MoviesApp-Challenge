@@ -29,6 +29,12 @@
 		FEE6E29E2707418C00479713 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E28D2707418C00479713 /* ViewController+Ext.swift */; };
 		FEE6E29F2707418C00479713 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2902707418C00479713 /* RealmHelper.swift */; };
 		FEE6E2AC2707434900479713 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE6E2AB2707434900479713 /* Home.storyboard */; };
+		FEE6E2AF27074A6D00479713 /* TheMovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2AE27074A6D00479713 /* TheMovieAPI.swift */; };
+		FEE6E2B227074CD400479713 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2B127074CD400479713 /* AppConstants.swift */; };
+		FEE6E2B427074D5B00479713 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2B327074D5B00479713 /* HomeVC.swift */; };
+		FEE6E2BB2707522400479713 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2BA2707522400479713 /* Movie.swift */; };
+		FEE6E2BF270753C700479713 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2BE270753C700479713 /* BaseResult.swift */; };
+		FEE6E2C12707544700479713 /* BaseTheMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2C02707544700479713 /* BaseTheMovie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +89,12 @@
 		FEE6E28D2707418C00479713 /* ViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		FEE6E2902707418C00479713 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		FEE6E2AB2707434900479713 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		FEE6E2AE27074A6D00479713 /* TheMovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieAPI.swift; sourceTree = "<group>"; };
+		FEE6E2B127074CD400479713 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		FEE6E2B327074D5B00479713 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		FEE6E2BA2707522400479713 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		FEE6E2BE270753C700479713 /* BaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
+		FEE6E2C02707544700479713 /* BaseTheMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTheMovie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +220,7 @@
 		FEE6E26D2707414700479713 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FEE6E2B027074CCA00479713 /* Constants */,
 				FEE6E27F2707418C00479713 /* Enums */,
 				FEE6E2882707418C00479713 /* Extensions */,
 				FEE6E28E2707418C00479713 /* Helpers */,
@@ -303,6 +316,9 @@
 		FEE6E2A12707429D00479713 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				FEE6E2AD27074A5400479713 /* HttpClients */,
+				FEE6E2B627074E8E00479713 /* Service */,
+				FEE6E2B527074E8B00479713 /* Models */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -358,6 +374,7 @@
 		FEE6E2A8270742FF00479713 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FEE6E2B327074D5B00479713 /* HomeVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -375,6 +392,63 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEE6E2AD27074A5400479713 /* HttpClients */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6E2AE27074A6D00479713 /* TheMovieAPI.swift */,
+			);
+			path = HttpClients;
+			sourceTree = "<group>";
+		};
+		FEE6E2B027074CCA00479713 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6E2B127074CD400479713 /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		FEE6E2B527074E8B00479713 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6E2BD270753B700479713 /* BaseResult */,
+				FEE6E2BC270752B100479713 /* BaseTheMovie */,
+				FEE6E2B92707520B00479713 /* Movie */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FEE6E2B627074E8E00479713 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FEE6E2B92707520B00479713 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6E2BA2707522400479713 /* Movie.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		FEE6E2BC270752B100479713 /* BaseTheMovie */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6E2C02707544700479713 /* BaseTheMovie.swift */,
+			);
+			path = BaseTheMovie;
+			sourceTree = "<group>";
+		};
+		FEE6E2BD270753B700479713 /* BaseResult */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6E2BE270753C700479713 /* BaseResult.swift */,
+			);
+			path = BaseResult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -616,18 +690,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEE6E29B2707418C00479713 /* UIView+Ext.swift in Sources */,
+				FEE6E2C12707544700479713 /* BaseTheMovie.swift in Sources */,
 				FEE6E29F2707418C00479713 /* RealmHelper.swift in Sources */,
 				FEE6E23C2707411800479713 /* AppDelegate.swift in Sources */,
 				FEE6E29D2707418C00479713 /* StoryBoard+Ext.swift in Sources */,
 				FEE6E2932707418C00479713 /* AppStoryBoard.swift in Sources */,
+				FEE6E2B427074D5B00479713 /* HomeVC.swift in Sources */,
 				FEE6E2952707418C00479713 /* NetworkContracts.swift in Sources */,
 				FEE6E29A2707418C00479713 /* Encodable+Ext.swift in Sources */,
 				FEE6E29E2707418C00479713 /* ViewController+Ext.swift in Sources */,
 				FEE6E23E2707411800479713 /* SceneDelegate.swift in Sources */,
 				FEE6E2962707418C00479713 /* HttpMethod.swift in Sources */,
 				FEE6E29C2707418C00479713 /* TableView+Ext.swift in Sources */,
+				FEE6E2B227074CD400479713 /* AppConstants.swift in Sources */,
 				FEE6E2992707418C00479713 /* NetworkError.swift in Sources */,
+				FEE6E2BF270753C700479713 /* BaseResult.swift in Sources */,
+				FEE6E2BB2707522400479713 /* Movie.swift in Sources */,
 				FEE6E2972707418C00479713 /* HttpHeader.swift in Sources */,
+				FEE6E2AF27074A6D00479713 /* TheMovieAPI.swift in Sources */,
 				FEE6E2982707418C00479713 /* NetworkExecuter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

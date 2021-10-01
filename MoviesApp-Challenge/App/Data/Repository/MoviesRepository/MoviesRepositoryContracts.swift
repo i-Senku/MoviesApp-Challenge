@@ -8,8 +8,8 @@
 import Foundation
 
 protocol MoviesRepositoryContracts {
-    func upComing(language : String,page : Int,completion : @escaping (Result<BaseTheMovie<Movie>,TheMovieError>) -> Void)
-    func nowPlaying(language : String,page : Int,completion : @escaping (Result<BaseTheMovie<Movie>,TheMovieError>) -> Void)
+    func upComing(language : String?,page : Int?,completion : @escaping (Result<BaseTheMovie<Movie>,TheMovieError>) -> Void)
+    func nowPlaying(language : String?,page : Int?,completion : @escaping (Result<BaseTheMovie<Movie>,TheMovieError>) -> Void)
 }
 
 

@@ -10,8 +10,8 @@ import Foundation
 final class MoviesService  : MoviesDataService{
     
     func upComing(
-        language: String = "en-US",
-        page: Int = 1,
+        language: String,
+        page: Int,
         completion: @escaping (Result<BaseTheMovie<Movie>, NetworkError>) -> Void) {
         
         NetworkExecuter.shared.execute(
@@ -21,8 +21,8 @@ final class MoviesService  : MoviesDataService{
     }
     
     func nowPlaying(
-        language: String = "en-US",
-        page: Int = 1,
+        language: String,
+        page: Int,
         completion: @escaping (Result<BaseTheMovie<Movie>, NetworkError>) -> Void) {
         
         NetworkExecuter.shared.execute(

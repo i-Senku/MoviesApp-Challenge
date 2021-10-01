@@ -15,8 +15,12 @@ final class MoviesRepository : MoviesRepositoryContracts {
         self.moviesDataService = moviesDataService
     }
     
-    func upComing(language: String, page: Int, completion: @escaping (Result<BaseTheMovie<Movie>, TheMovieError>) -> Void) {
-        moviesDataService.upComing(language: language, page: page){ result in
+    func upComing(
+        language: String?,
+        page: Int?,
+        completion: @escaping (Result<BaseTheMovie<Movie>, TheMovieError>) -> Void) {
+        
+        moviesDataService.upComing(language: language ?? "en-US", page: page ?? 1){ result in
             switch result {
             case .success(let theMovieResponseModel):
                 completion(.success(theMovieResponseModel))
@@ -24,10 +28,15 @@ final class MoviesRepository : MoviesRepositoryContracts {
                 completion(.failure(networkError.toTheMovieError()!))
             }
         }
+        
     }
     
-    func nowPlaying(language: String, page: Int, completion: @escaping (Result<BaseTheMovie<Movie>, TheMovieError>) -> Void) {
-        moviesDataService.nowPlaying(language: language, page: page){ result in
+    func nowPlaying(
+        language: String?,
+        page: Int?,
+        completion: @escaping (Result<BaseTheMovie<Movie>, TheMovieError>) -> Void) {
+        
+        moviesDataService.nowPlaying(language: language ?? "en-US", page: page ?? 1){ result in
             switch result {
             case .success(let theMovieResponseModel):
                 completion(.success(theMovieResponseModel))
@@ -35,6 +44,7 @@ final class MoviesRepository : MoviesRepositoryContracts {
                 completion(.failure(networkError.toTheMovieError()!))
             }
         }
+        
     }
     
 }

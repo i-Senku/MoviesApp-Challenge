@@ -10,7 +10,16 @@ import UIKit
 
 final class HomeVC : UIViewController {
     
+    var homeViewModel : HomeViewModelContracts = HomeViewModel(moviesRepository: MoviesRepository(moviesDataService: MoviesService()))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        start()
+    }
+    
+    
+    fileprivate func start(){
+        homeViewModel.loadUpComing()
+        homeViewModel.loadNowPlaying()
     }
 }

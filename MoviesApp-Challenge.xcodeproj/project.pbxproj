@@ -41,6 +41,8 @@
 		FEE6E2CC2707749300479713 /* TheMovieError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2CB2707749300479713 /* TheMovieError.swift */; };
 		FEE6E2CE2707761900479713 /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2CD2707761900479713 /* MoviesRepository.swift */; };
 		FEE6E2D02707792600479713 /* NetworkError+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2CF2707792600479713 /* NetworkError+Ext.swift */; };
+		FEE6E2D227077BF200479713 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2D127077BF200479713 /* HomeViewModel.swift */; };
+		FEE6E2D427077C0B00479713 /* HomeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2D327077C0B00479713 /* HomeContracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		FEE6E2CB2707749300479713 /* TheMovieError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieError.swift; sourceTree = "<group>"; };
 		FEE6E2CD2707761900479713 /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
 		FEE6E2CF2707792600479713 /* NetworkError+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Ext.swift"; sourceTree = "<group>"; };
+		FEE6E2D127077BF200479713 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FEE6E2D327077C0B00479713 /* HomeContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +408,8 @@
 		FEE6E2AA2707431D00479713 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FEE6E2D327077C0B00479713 /* HomeContracts.swift */,
+				FEE6E2D127077BF200479713 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -732,6 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEE6E29B2707418C00479713 /* UIView+Ext.swift in Sources */,
+				FEE6E2D427077C0B00479713 /* HomeContracts.swift in Sources */,
 				FEE6E2C12707544700479713 /* BaseTheMovie.swift in Sources */,
 				FEE6E29F2707418C00479713 /* RealmHelper.swift in Sources */,
 				FEE6E23C2707411800479713 /* AppDelegate.swift in Sources */,
@@ -741,6 +748,7 @@
 				FEE6E2B427074D5B00479713 /* HomeVC.swift in Sources */,
 				FEE6E2C42707573A00479713 /* Movies-Service.swift in Sources */,
 				FEE6E2952707418C00479713 /* NetworkContracts.swift in Sources */,
+				FEE6E2D227077BF200479713 /* HomeViewModel.swift in Sources */,
 				FEE6E29A2707418C00479713 /* Encodable+Ext.swift in Sources */,
 				FEE6E29E2707418C00479713 /* ViewController+Ext.swift in Sources */,
 				FEE6E23E2707411800479713 /* SceneDelegate.swift in Sources */,

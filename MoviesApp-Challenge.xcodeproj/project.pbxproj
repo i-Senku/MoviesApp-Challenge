@@ -43,6 +43,11 @@
 		FEE6E2D02707792600479713 /* NetworkError+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2CF2707792600479713 /* NetworkError+Ext.swift */; };
 		FEE6E2D227077BF200479713 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2D127077BF200479713 /* HomeViewModel.swift */; };
 		FEE6E2D427077C0B00479713 /* HomeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2D327077C0B00479713 /* HomeContracts.swift */; };
+		FEE6E2D6270784BF00479713 /* SliderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2D5270784BF00479713 /* SliderCollectionView.swift */; };
+		FEE6E2D8270784E600479713 /* UpComingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2D7270784E600479713 /* UpComingTableView.swift */; };
+		FEE6E2DD2707854600479713 /* UpComingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2DB2707854600479713 /* UpComingCell.swift */; };
+		FEE6E2DE2707854600479713 /* UpComingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEE6E2DC2707854600479713 /* UpComingCell.xib */; };
+		FEE6E2E027078E3C00479713 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2DF27078E3C00479713 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +116,11 @@
 		FEE6E2CF2707792600479713 /* NetworkError+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Ext.swift"; sourceTree = "<group>"; };
 		FEE6E2D127077BF200479713 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FEE6E2D327077C0B00479713 /* HomeContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContracts.swift; sourceTree = "<group>"; };
+		FEE6E2D5270784BF00479713 /* SliderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionView.swift; sourceTree = "<group>"; };
+		FEE6E2D7270784E600479713 /* UpComingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingTableView.swift; sourceTree = "<group>"; };
+		FEE6E2DB2707854600479713 /* UpComingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingCell.swift; sourceTree = "<group>"; };
+		FEE6E2DC2707854600479713 /* UpComingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpComingCell.xib; sourceTree = "<group>"; };
+		FEE6E2DF27078E3C00479713 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +313,7 @@
 				FEE6E28C2707418C00479713 /* StoryBoard+Ext.swift */,
 				FEE6E28D2707418C00479713 /* ViewController+Ext.swift */,
 				FEE6E2CF2707792600479713 /* NetworkError+Ext.swift */,
+				FEE6E2DF27078E3C00479713 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +389,8 @@
 		FEE6E2A6270742C400479713 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FEE6E2D5270784BF00479713 /* SliderCollectionView.swift */,
+				FEE6E2D7270784E600479713 /* UpComingTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +398,8 @@
 		FEE6E2A7270742C800479713 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FEE6E2DB2707854600479713 /* UpComingCell.swift */,
+				FEE6E2DC2707854600479713 /* UpComingCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -608,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEE6E2AC2707434900479713 /* Home.storyboard in Resources */,
+				FEE6E2DE2707854600479713 /* UpComingCell.xib in Resources */,
 				FEE6E2482707411800479713 /* LaunchScreen.storyboard in Resources */,
 				FEE6E2452707411800479713 /* Assets.xcassets in Resources */,
 			);
@@ -743,10 +759,12 @@
 				FEE6E29F2707418C00479713 /* RealmHelper.swift in Sources */,
 				FEE6E23C2707411800479713 /* AppDelegate.swift in Sources */,
 				FEE6E29D2707418C00479713 /* StoryBoard+Ext.swift in Sources */,
+				FEE6E2D6270784BF00479713 /* SliderCollectionView.swift in Sources */,
 				FEE6E2932707418C00479713 /* AppStoryBoard.swift in Sources */,
 				FEE6E2CE2707761900479713 /* MoviesRepository.swift in Sources */,
 				FEE6E2B427074D5B00479713 /* HomeVC.swift in Sources */,
 				FEE6E2C42707573A00479713 /* Movies-Service.swift in Sources */,
+				FEE6E2D8270784E600479713 /* UpComingTableView.swift in Sources */,
 				FEE6E2952707418C00479713 /* NetworkContracts.swift in Sources */,
 				FEE6E2D227077BF200479713 /* HomeViewModel.swift in Sources */,
 				FEE6E29A2707418C00479713 /* Encodable+Ext.swift in Sources */,
@@ -760,10 +778,12 @@
 				FEE6E2CC2707749300479713 /* TheMovieError.swift in Sources */,
 				FEE6E2BB2707522400479713 /* Movie.swift in Sources */,
 				FEE6E2C62707574C00479713 /* MoviesDataService.swift in Sources */,
+				FEE6E2DD2707854600479713 /* UpComingCell.swift in Sources */,
 				FEE6E2972707418C00479713 /* HttpHeader.swift in Sources */,
 				FEE6E2AF27074A6D00479713 /* TheMovieAPI.swift in Sources */,
 				FEE6E2D02707792600479713 /* NetworkError+Ext.swift in Sources */,
 				FEE6E2982707418C00479713 /* NetworkExecuter.swift in Sources */,
+				FEE6E2E027078E3C00479713 /* String+Ext.swift in Sources */,
 				FEE6E2C92707743A00479713 /* MoviesRepositoryContracts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,8 @@ final class HomeVC : UIViewController {
     
     var homeViewModel : HomeViewModelContracts = HomeViewModel(moviesRepository: MoviesRepository(moviesDataService: MoviesService()))
     
+    @IBOutlet weak var upComingTableView: UpComingTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         start()
@@ -19,7 +21,24 @@ final class HomeVC : UIViewController {
     
     
     fileprivate func start(){
+        homeViewModel.delegate = self
+        upComingTableView.homeViewModel = homeViewModel
         homeViewModel.loadUpComing()
-        homeViewModel.loadNowPlaying()
+        //homeViewModel.loadNowPlaying()
+    }
+}
+
+extension HomeVC : HomeViewModelDelegate {
+    func handleOutput(output: HomeViewModelOutput) {
+        switch output {
+        case .refreshNowPlaying:
+            break
+        case .refreshUpComing:
+            self.upComingTableView.reloadData()
+        case .nowPlayingError(_):
+            break
+        case .upComingError(_):
+            break
+        }
     }
 }

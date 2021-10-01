@@ -37,6 +37,10 @@
 		FEE6E2C12707544700479713 /* BaseTheMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2C02707544700479713 /* BaseTheMovie.swift */; };
 		FEE6E2C42707573A00479713 /* Movies-Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2C32707573A00479713 /* Movies-Service.swift */; };
 		FEE6E2C62707574C00479713 /* MoviesDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2C52707574C00479713 /* MoviesDataService.swift */; };
+		FEE6E2C92707743A00479713 /* MoviesRepositoryContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2C82707743A00479713 /* MoviesRepositoryContracts.swift */; };
+		FEE6E2CC2707749300479713 /* TheMovieError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2CB2707749300479713 /* TheMovieError.swift */; };
+		FEE6E2CE2707761900479713 /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2CD2707761900479713 /* MoviesRepository.swift */; };
+		FEE6E2D02707792600479713 /* NetworkError+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E2CF2707792600479713 /* NetworkError+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,10 @@
 		FEE6E2C02707544700479713 /* BaseTheMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTheMovie.swift; sourceTree = "<group>"; };
 		FEE6E2C32707573A00479713 /* Movies-Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movies-Service.swift"; sourceTree = "<group>"; };
 		FEE6E2C52707574C00479713 /* MoviesDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDataService.swift; sourceTree = "<group>"; };
+		FEE6E2C82707743A00479713 /* MoviesRepositoryContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryContracts.swift; sourceTree = "<group>"; };
+		FEE6E2CB2707749300479713 /* TheMovieError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieError.swift; sourceTree = "<group>"; };
+		FEE6E2CD2707761900479713 /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
+		FEE6E2CF2707792600479713 /* NetworkError+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +298,7 @@
 				FEE6E28B2707418C00479713 /* TableView+Ext.swift */,
 				FEE6E28C2707418C00479713 /* StoryBoard+Ext.swift */,
 				FEE6E28D2707418C00479713 /* ViewController+Ext.swift */,
+				FEE6E2CF2707792600479713 /* NetworkError+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +339,7 @@
 		FEE6E2A2270742A300479713 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				FEE6E2C72707742A00479713 /* MoviesRepository */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -417,6 +427,7 @@
 		FEE6E2B527074E8B00479713 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FEE6E2CA2707748500479713 /* TheMovieError */,
 				FEE6E2BD270753B700479713 /* BaseResult */,
 				FEE6E2BC270752B100479713 /* BaseTheMovie */,
 				FEE6E2B92707520B00479713 /* Movie */,
@@ -463,6 +474,23 @@
 				FEE6E2C32707573A00479713 /* Movies-Service.swift */,
 			);
 			path = "Movies-Service";
+			sourceTree = "<group>";
+		};
+		FEE6E2C72707742A00479713 /* MoviesRepository */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6E2C82707743A00479713 /* MoviesRepositoryContracts.swift */,
+				FEE6E2CD2707761900479713 /* MoviesRepository.swift */,
+			);
+			path = MoviesRepository;
+			sourceTree = "<group>";
+		};
+		FEE6E2CA2707748500479713 /* TheMovieError */ = {
+			isa = PBXGroup;
+			children = (
+				FEE6E2CB2707749300479713 /* TheMovieError.swift */,
+			);
+			path = TheMovieError;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -709,6 +737,7 @@
 				FEE6E23C2707411800479713 /* AppDelegate.swift in Sources */,
 				FEE6E29D2707418C00479713 /* StoryBoard+Ext.swift in Sources */,
 				FEE6E2932707418C00479713 /* AppStoryBoard.swift in Sources */,
+				FEE6E2CE2707761900479713 /* MoviesRepository.swift in Sources */,
 				FEE6E2B427074D5B00479713 /* HomeVC.swift in Sources */,
 				FEE6E2C42707573A00479713 /* Movies-Service.swift in Sources */,
 				FEE6E2952707418C00479713 /* NetworkContracts.swift in Sources */,
@@ -720,11 +749,14 @@
 				FEE6E2B227074CD400479713 /* AppConstants.swift in Sources */,
 				FEE6E2992707418C00479713 /* NetworkError.swift in Sources */,
 				FEE6E2BF270753C700479713 /* BaseResult.swift in Sources */,
+				FEE6E2CC2707749300479713 /* TheMovieError.swift in Sources */,
 				FEE6E2BB2707522400479713 /* Movie.swift in Sources */,
 				FEE6E2C62707574C00479713 /* MoviesDataService.swift in Sources */,
 				FEE6E2972707418C00479713 /* HttpHeader.swift in Sources */,
 				FEE6E2AF27074A6D00479713 /* TheMovieAPI.swift in Sources */,
+				FEE6E2D02707792600479713 /* NetworkError+Ext.swift in Sources */,
 				FEE6E2982707418C00479713 /* NetworkExecuter.swift in Sources */,
+				FEE6E2C92707743A00479713 /* MoviesRepositoryContracts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

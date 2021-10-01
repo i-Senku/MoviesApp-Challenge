@@ -21,8 +21,8 @@ final class MoviesService  : MoviesDataService{
     }
     
     func nowPlaying(
-        language: String,
-        page: Int,
+        language: String = "en-US",
+        page: Int = 1,
         completion: @escaping (Result<BaseTheMovie<Movie>, NetworkError>) -> Void) {
         
         NetworkExecuter.shared.execute(

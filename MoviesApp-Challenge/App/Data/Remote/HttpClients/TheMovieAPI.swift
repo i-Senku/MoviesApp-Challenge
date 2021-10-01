@@ -10,8 +10,8 @@ import Foundation
 
 enum TheMovieAPI : BaseClientGenerator {
     
-    case nowPlaying
-    case upComing
+    case nowPlaying(language : String = "en-US",page : Int)
+    case upComing(language : String = "en-US",page : Int)
     
     var scheme: String { "https" }
     
@@ -27,13 +27,20 @@ enum TheMovieAPI : BaseClientGenerator {
     }
     
     var queryItems: [URLQueryItem]?{
-        return nil
+        switch self {
+        case .nowPlaying(let language, let page),.upComing(let language, let page):
+            return [
+                URLQueryItem(name: "language", value: language),
+                URLQueryItem(name: "page", value: String(page)),
+            ]
+
+        }
     }
     
+    //MARK: - Default GET
     var method: HttpMethod{
         switch self {
         default:
-            //MARK: - Default
             return .get
         }
     }
@@ -45,6 +52,7 @@ enum TheMovieAPI : BaseClientGenerator {
         ]
     }
     
+    //MARK: - Default Nil
     var body: [String : Any]? {
         switch self {
         default:

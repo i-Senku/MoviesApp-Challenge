@@ -28,11 +28,18 @@ protocol HomeViewModelContracts {
 
 //MARK: - Outputs
 enum HomeViewModelOutput{
-    case refreshNowPlaying(count:Int)
-    case refreshUpComing
+    //MARK: - Reload
+    case reloadSlider(count:Int)
+    case reloadUpComingTableView
+    
+    //MARK: - Errors
     case nowPlayingError(TheMovieError)
     case upComingError(TheMovieError)
-    case upComingIndicator(isHidden : Bool)
+    
+    //MARK: - Indicators
+    case indicatorOfUpComing(isAnimate : Bool)
+    case indicatorOfSlider(isAnimate : Bool)
+    case refreshed
 }
 
 //MARK: - Delegate

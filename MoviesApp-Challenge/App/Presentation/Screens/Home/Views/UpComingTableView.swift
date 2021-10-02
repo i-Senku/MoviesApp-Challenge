@@ -26,7 +26,6 @@ class UpComingTableView: UITableView {
     
     @objc private func pullToRefresh(sender : UIRefreshControl){
         homeViewModel?.refresh()
-        sender.endRefreshing()
     }
 }
 

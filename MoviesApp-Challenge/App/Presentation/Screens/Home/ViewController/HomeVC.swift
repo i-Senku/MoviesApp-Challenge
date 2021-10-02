@@ -12,12 +12,12 @@ final class HomeVC : UIViewController {
     
     var homeViewModel : HomeViewModelContracts = HomeViewModel(moviesRepository: MoviesRepository(moviesDataService: MoviesService()))
     
+    @IBOutlet weak var sliderErrorText: UILabel!
+    @IBOutlet weak var sliderIndicator: UIActivityIndicatorView!
     @IBOutlet weak var upComingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var nowPlayingCollectionView: SliderCollectionView!
     @IBOutlet weak var upComingTableView: UpComingTableView!
-    
-    
     @IBOutlet weak var upComingErrorText: UILabel!
     
     override func viewDidLoad() {
@@ -29,8 +29,10 @@ final class HomeVC : UIViewController {
     fileprivate func start(){
         nowPlayingCollectionView.sliderDelegate = self
         homeViewModel.delegate = self
+        
         upComingTableView.homeViewModel = homeViewModel
         nowPlayingCollectionView.homeViewModel = homeViewModel
+        
         homeViewModel.loadUpComing(page: 1)
         homeViewModel.loadNowPlaying()
     }
@@ -40,19 +42,38 @@ final class HomeVC : UIViewController {
 extension HomeVC : HomeViewModelDelegate {
     func handleOutput(output: HomeViewModelOutput) {
         switch output {
-        case .refreshNowPlaying(let count):
+        case .reloadSlider(let count):
+            self.sliderErrorText.isHidden = true
             self.nowPlayingCollectionView.reloadData()
             self.pageController.numberOfPages = count
-        case .refreshUpComing:
+            
+        case .reloadUpComingTableView:
             self.upComingErrorText.isHidden = true
             self.upComingTableView.reloadData()
-        case .nowPlayingError(_):
-            break
-        case .upComingIndicator(let status):
-            self.upComingIndicator.isHidden = status
+            
+        case .nowPlayingError(let error):
+            self.sliderErrorText.isHidden = false
+            self.sliderErrorText.text = error.statusMessage
+            
+        case .refreshed:
+            self.upComingTableView.refreshControl?.endRefreshing()
+            
+        case .indicatorOfUpComing(let isAnimate):
+            if isAnimate {
+                self.upComingIndicator.startAnimating()
+            }else{
+                self.upComingIndicator.stopAnimating()
+            }
+        case .indicatorOfSlider(let isAnimate):
+            if isAnimate {
+                self.sliderIndicator.startAnimating()
+            }else{
+                self.sliderIndicator.stopAnimating()
+            }
         case .upComingError(let error):
             self.upComingErrorText.isHidden = false
             self.upComingErrorText.text = error.statusMessage
+            
         }
     }
 }

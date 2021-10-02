@@ -57,8 +57,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Fo-r6-bjd">
                                 <rect key="frame" x="8" y="532.5" width="398" height="100"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="N0Y-91-QjY">
-                                        <rect key="frame" x="189" y="40" width="20" height="20"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="N0Y-91-QjY">
+                                        <rect key="frame" x="180.5" y="31.5" width="37" height="37"/>
                                     </activityIndicatorView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJa-Ju-pOa">
                                         <rect key="frame" x="162" y="39.5" width="74" height="21"/>
@@ -80,6 +80,30 @@
                                 <rect key="frame" x="0.0" y="233" width="414" height="28"/>
                                 <color key="pageIndicatorTintColor" white="1" alpha="0.70296978476821192" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5H-69-eVa">
+                                <rect key="frame" x="8" y="84.5" width="398" height="100"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slider Error Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-5E-PBD">
+                                        <rect key="frame" x="8" y="39.5" width="382" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dav-YQ-Dh6">
+                                        <rect key="frame" x="180.5" y="31.5" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6oS-gW-nJG"/>
+                                    <constraint firstItem="UaR-5E-PBD" firstAttribute="leading" secondItem="V5H-69-eVa" secondAttribute="leading" constant="8" id="9ir-OT-PPJ"/>
+                                    <constraint firstItem="dav-YQ-Dh6" firstAttribute="centerX" secondItem="V5H-69-eVa" secondAttribute="centerX" id="Nlz-jh-Syg"/>
+                                    <constraint firstItem="UaR-5E-PBD" firstAttribute="centerX" secondItem="V5H-69-eVa" secondAttribute="centerX" id="RGE-j3-cMk"/>
+                                    <constraint firstItem="UaR-5E-PBD" firstAttribute="centerY" secondItem="V5H-69-eVa" secondAttribute="centerY" id="RZ5-TW-mI5"/>
+                                    <constraint firstItem="dav-YQ-Dh6" firstAttribute="centerY" secondItem="V5H-69-eVa" secondAttribute="centerY" id="o8J-R0-csx"/>
+                                    <constraint firstAttribute="trailing" secondItem="UaR-5E-PBD" secondAttribute="trailing" constant="8" id="y3Q-rr-qs6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,12 +113,16 @@
                             <constraint firstItem="Mf7-JF-Ack" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="7b5-AR-myq"/>
                             <constraint firstItem="4Fo-r6-bjd" firstAttribute="centerY" secondItem="xss-gB-pmu" secondAttribute="centerY" id="9EF-WJ-0BU"/>
                             <constraint firstItem="Mf7-JF-Ack" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Imk-PY-Xnq"/>
+                            <constraint firstItem="V5H-69-eVa" firstAttribute="centerX" secondItem="Mf7-JF-Ack" secondAttribute="centerX" id="KlE-xJ-04z"/>
                             <constraint firstItem="Mf7-JF-Ack" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="Lfu-Hb-0kA"/>
                             <constraint firstItem="xss-gB-pmu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="O0v-BL-3jT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xss-gB-pmu" secondAttribute="trailing" id="ORp-Vy-KJ2"/>
+                            <constraint firstItem="V5H-69-eVa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="Q90-qg-GCM"/>
+                            <constraint firstItem="V5H-69-eVa" firstAttribute="centerY" secondItem="Mf7-JF-Ack" secondAttribute="centerY" id="Qnm-Yp-Scr"/>
                             <constraint firstAttribute="bottom" secondItem="xss-gB-pmu" secondAttribute="bottom" id="RKV-ci-xSi"/>
                             <constraint firstItem="z5J-eT-QWf" firstAttribute="trailing" secondItem="Mf7-JF-Ack" secondAttribute="trailing" id="RuK-9c-DO3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Mf7-JF-Ack" secondAttribute="trailing" id="g9H-gH-GiY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="V5H-69-eVa" secondAttribute="trailing" constant="8" id="hoD-ac-9U5"/>
                             <constraint firstItem="z5J-eT-QWf" firstAttribute="bottom" secondItem="Mf7-JF-Ack" secondAttribute="bottom" constant="-8" id="i7f-1A-ceK"/>
                             <constraint firstItem="4Fo-r6-bjd" firstAttribute="centerX" secondItem="xss-gB-pmu" secondAttribute="centerX" id="ooq-c9-dOW"/>
                             <constraint firstItem="4Fo-r6-bjd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="q7h-de-7K6"/>
@@ -105,6 +133,8 @@
                     <connections>
                         <outlet property="nowPlayingCollectionView" destination="Mf7-JF-Ack" id="2TO-Wg-Ui5"/>
                         <outlet property="pageController" destination="z5J-eT-QWf" id="4FW-rU-x7T"/>
+                        <outlet property="sliderErrorText" destination="UaR-5E-PBD" id="jcH-wN-LVT"/>
+                        <outlet property="sliderIndicator" destination="dav-YQ-Dh6" id="8AA-YN-fjN"/>
                         <outlet property="upComingErrorText" destination="zJa-Ju-pOa" id="r52-hR-PdL"/>
                         <outlet property="upComingIndicator" destination="N0Y-91-QjY" id="u6T-ko-H0D"/>
                         <outlet property="upComingTableView" destination="xss-gB-pmu" id="3AZ-aV-5e7"/>

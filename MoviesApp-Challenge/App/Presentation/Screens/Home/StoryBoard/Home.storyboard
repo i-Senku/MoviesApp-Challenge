@@ -40,7 +40,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xss-gB-pmu" customClass="UpComingTableView" customModule="MoviesApp_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="269" width="414" height="593"/>
+                                <rect key="frame" x="0.0" y="269" width="414" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
@@ -68,7 +68,7 @@
                             <constraint firstItem="Mf7-JF-Ack" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="Lfu-Hb-0kA"/>
                             <constraint firstItem="xss-gB-pmu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="O0v-BL-3jT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xss-gB-pmu" secondAttribute="trailing" id="ORp-Vy-KJ2"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xss-gB-pmu" secondAttribute="bottom" id="RKV-ci-xSi"/>
+                            <constraint firstAttribute="bottom" secondItem="xss-gB-pmu" secondAttribute="bottom" id="RKV-ci-xSi"/>
                             <constraint firstItem="z5J-eT-QWf" firstAttribute="trailing" secondItem="Mf7-JF-Ack" secondAttribute="trailing" id="RuK-9c-DO3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Mf7-JF-Ack" secondAttribute="trailing" id="g9H-gH-GiY"/>
                             <constraint firstItem="z5J-eT-QWf" firstAttribute="bottom" secondItem="Mf7-JF-Ack" secondAttribute="bottom" constant="-8" id="i7f-1A-ceK"/>

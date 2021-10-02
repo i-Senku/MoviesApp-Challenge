@@ -45,6 +45,8 @@ final class HomeViewModel : HomeViewModelContracts{
     }
     
     func refresh() {
+        upComingModel = nil
+        notify(.refreshUpComing)
         loadUpComing()
         //MARK: - If you want to refresh slider. You can call loadNowPlaying() method.
         //loadNowPlaying()

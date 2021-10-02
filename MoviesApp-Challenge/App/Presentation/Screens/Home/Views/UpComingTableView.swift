@@ -32,12 +32,12 @@ class UpComingTableView: UITableView {
 
 extension UpComingTableView : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homeViewModel?.upComingModel?.results.count ?? 0
+        return homeViewModel?.upComingMovies.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UpComingCell.cellId) as! UpComingCell
-        let movie = homeViewModel?.upComingModel?.results[indexPath.row]
+        let movie = homeViewModel?.upComingMovies[indexPath.row]
         cell.populate(movie: movie)
         return cell
     }
@@ -49,4 +49,15 @@ extension UpComingTableView : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height * 0.2
     }
+}
+
+extension UpComingTableView : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let position = scrollView.contentOffset.y
+        if position > (contentSize.height - 100) - scrollView.frame.size.height{
+            homeViewModel?.loadMoreUpComing()
+        }
+    }
+
 }

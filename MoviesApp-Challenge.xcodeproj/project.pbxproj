@@ -12,6 +12,7 @@
 		F60B985B9306A9384898DF83 /* Pods_MoviesApp_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370CDB3AA99C0BF01086D52E /* Pods_MoviesApp_Challenge.framework */; };
 		FE5D4F682707B20500DEAD2B /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D4F662707B20500DEAD2B /* SliderCell.swift */; };
 		FE5D4F692707B20500DEAD2B /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE5D4F672707B20500DEAD2B /* SliderCell.xib */; };
+		FEBB26CA27086E13009AEF45 /* TheMovieListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB26C927086E13009AEF45 /* TheMovieListError.swift */; };
 		FEE6E23C2707411800479713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E23B2707411800479713 /* AppDelegate.swift */; };
 		FEE6E23E2707411800479713 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE6E23D2707411800479713 /* SceneDelegate.swift */; };
 		FEE6E2452707411800479713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE6E2442707411800479713 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		D3B29DD670E16D9088D27694 /* Pods_MoviesApp_Challenge_MoviesApp_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviesApp_Challenge_MoviesApp_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5D4F662707B20500DEAD2B /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		FE5D4F672707B20500DEAD2B /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
+		FEBB26C927086E13009AEF45 /* TheMovieListError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieListError.swift; sourceTree = "<group>"; };
 		FEE6E2382707411800479713 /* MoviesApp-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoviesApp-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE6E23B2707411800479713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEE6E23D2707411800479713 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -252,7 +254,7 @@
 				FEE6E27F2707418C00479713 /* Enums */,
 				FEE6E2882707418C00479713 /* Extensions */,
 				FEE6E28E2707418C00479713 /* Helpers */,
-				FEE6E2812707418C00479713 /* Networking */,
+				FEE6E2812707418C00479713 /* Network */,
 				FEE6E27B2707418C00479713 /* Utilities */,
 			);
 			path = Core;
@@ -294,7 +296,7 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		FEE6E2812707418C00479713 /* Networking */ = {
+		FEE6E2812707418C00479713 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				FEE6E2832707418C00479713 /* NetworkContracts.swift */,
@@ -303,7 +305,7 @@
 				FEE6E2862707418C00479713 /* NetworkExecuter.swift */,
 				FEE6E2872707418C00479713 /* NetworkError.swift */,
 			);
-			path = Networking;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FEE6E2882707418C00479713 /* Extensions */ = {
@@ -513,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				FEE6E2CB2707749300479713 /* TheMovieError.swift */,
+				FEBB26C927086E13009AEF45 /* TheMovieListError.swift */,
 			);
 			path = TheMovieError;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 			files = (
 				FEE6E29B2707418C00479713 /* UIView+Ext.swift in Sources */,
 				FEE6E2D427077C0B00479713 /* HomeContracts.swift in Sources */,
+				FEBB26CA27086E13009AEF45 /* TheMovieListError.swift in Sources */,
 				FEE6E2C12707544700479713 /* BaseTheMovie.swift in Sources */,
 				FEE6E29F2707418C00479713 /* RealmHelper.swift in Sources */,
 				FEE6E23C2707411800479713 /* AppDelegate.swift in Sources */,

@@ -8,6 +8,7 @@
 import Foundation
 
 final class HomeViewModel : HomeViewModelContracts{
+    
     var moviesRepository: MoviesRepositoryContracts
     
     init(moviesRepository : MoviesRepositoryContracts) {
@@ -18,16 +19,27 @@ final class HomeViewModel : HomeViewModelContracts{
     var upComingModel: BaseTheMovie<Movie>?
     var delegate: HomeViewModelDelegate?
     
-    func loadUpComing() {
-        moviesRepository.upComing(language: nil, page: nil) {[weak self] result in
+    var upComingMovies: [Movie] = []
+    var nowPlayinMovies: [Movie] = []
+    var paginableStatus: Bool = true
+    
+    func loadUpComing(page : Int = 1) {
+        moviesRepository.upComing(language: nil, page: page) {
+            [weak self] result in
             guard let self = self else {return}
+            
             switch result{
             case .success(let baseTheMovie):
                 self.upComingModel = baseTheMovie
+                self.upComingMovies.append(contentsOf: baseTheMovie.results)
+                self.paginableStatus = true
+                self.notify(.upComingIndicator(isHidden: true))
                 self.notify(.refreshUpComing)
             case .failure(let error):
+                self.notify(.upComingIndicator(isHidden: true))
                 self.notify(.upComingError(error))
             }
+            
         }
     }
     
@@ -37,6 +49,7 @@ final class HomeViewModel : HomeViewModelContracts{
             switch result{
             case .success(let baseTheMovie):
                 self.nowPlayingModel = baseTheMovie
+                self.nowPlayinMovies.append(contentsOf: baseTheMovie.results)
                 self.notify(.refreshNowPlaying(count: baseTheMovie.results.count))
             case .failure(let error):
                 self.notify(.nowPlayingError(error))
@@ -44,12 +57,23 @@ final class HomeViewModel : HomeViewModelContracts{
         }
     }
     
+    func loadMoreUpComing() {
+        if paginableStatus {
+            if let upComingModel = upComingModel {
+                if upComingModel.page <= upComingModel.totalPages{
+                    paginableStatus = false
+                    print(upComingModel.page+1)
+                    loadUpComing(page: upComingModel.page + 1)
+                }
+            }
+        }
+    }
+    
     func refresh() {
-        upComingModel = nil
+        upComingMovies = []
+        notify(.upComingIndicator(isHidden: false))
         notify(.refreshUpComing)
         loadUpComing()
-        //MARK: - If you want to refresh slider. You can call loadNowPlaying() method.
-        //loadNowPlaying()
     }
     
     private func notify(_ output : HomeViewModelOutput){

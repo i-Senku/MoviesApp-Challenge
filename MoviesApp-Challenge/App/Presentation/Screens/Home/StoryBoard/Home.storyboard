@@ -54,6 +54,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Fo-r6-bjd">
+                                <rect key="frame" x="8" y="532.5" width="398" height="100"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="N0Y-91-QjY">
+                                        <rect key="frame" x="189" y="40" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJa-Ju-pOa">
+                                        <rect key="frame" x="162" y="39.5" width="74" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="zJa-Ju-pOa" firstAttribute="centerX" secondItem="4Fo-r6-bjd" secondAttribute="centerX" id="1ZJ-6m-EXh"/>
+                                    <constraint firstItem="N0Y-91-QjY" firstAttribute="centerX" secondItem="4Fo-r6-bjd" secondAttribute="centerX" id="J6i-yd-0Gk"/>
+                                    <constraint firstAttribute="height" constant="100" id="Rru-zz-hzS"/>
+                                    <constraint firstItem="N0Y-91-QjY" firstAttribute="centerY" secondItem="4Fo-r6-bjd" secondAttribute="centerY" id="axJ-Zd-ahi"/>
+                                    <constraint firstItem="zJa-Ju-pOa" firstAttribute="centerY" secondItem="4Fo-r6-bjd" secondAttribute="centerY" id="iM9-RX-JaD"/>
+                                </constraints>
+                            </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="z5J-eT-QWf">
                                 <rect key="frame" x="0.0" y="233" width="414" height="28"/>
                                 <color key="pageIndicatorTintColor" white="1" alpha="0.70296978476821192" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,8 +84,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4Fo-r6-bjd" secondAttribute="trailing" constant="8" id="3kR-4c-PAJ"/>
                             <constraint firstItem="z5J-eT-QWf" firstAttribute="leading" secondItem="Mf7-JF-Ack" secondAttribute="leading" id="3uA-bg-dAi"/>
                             <constraint firstItem="Mf7-JF-Ack" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="7b5-AR-myq"/>
+                            <constraint firstItem="4Fo-r6-bjd" firstAttribute="centerY" secondItem="xss-gB-pmu" secondAttribute="centerY" id="9EF-WJ-0BU"/>
                             <constraint firstItem="Mf7-JF-Ack" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Imk-PY-Xnq"/>
                             <constraint firstItem="Mf7-JF-Ack" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="Lfu-Hb-0kA"/>
                             <constraint firstItem="xss-gB-pmu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="O0v-BL-3jT"/>
@@ -72,6 +96,8 @@
                             <constraint firstItem="z5J-eT-QWf" firstAttribute="trailing" secondItem="Mf7-JF-Ack" secondAttribute="trailing" id="RuK-9c-DO3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Mf7-JF-Ack" secondAttribute="trailing" id="g9H-gH-GiY"/>
                             <constraint firstItem="z5J-eT-QWf" firstAttribute="bottom" secondItem="Mf7-JF-Ack" secondAttribute="bottom" constant="-8" id="i7f-1A-ceK"/>
+                            <constraint firstItem="4Fo-r6-bjd" firstAttribute="centerX" secondItem="xss-gB-pmu" secondAttribute="centerX" id="ooq-c9-dOW"/>
+                            <constraint firstItem="4Fo-r6-bjd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="q7h-de-7K6"/>
                             <constraint firstItem="xss-gB-pmu" firstAttribute="top" secondItem="Mf7-JF-Ack" secondAttribute="bottom" id="try-gu-Kd5"/>
                         </constraints>
                     </view>
@@ -79,6 +105,8 @@
                     <connections>
                         <outlet property="nowPlayingCollectionView" destination="Mf7-JF-Ack" id="2TO-Wg-Ui5"/>
                         <outlet property="pageController" destination="z5J-eT-QWf" id="4FW-rU-x7T"/>
+                        <outlet property="upComingErrorText" destination="zJa-Ju-pOa" id="r52-hR-PdL"/>
+                        <outlet property="upComingIndicator" destination="N0Y-91-QjY" id="u6T-ko-H0D"/>
                         <outlet property="upComingTableView" destination="xss-gB-pmu" id="3AZ-aV-5e7"/>
                     </connections>
                 </viewController>

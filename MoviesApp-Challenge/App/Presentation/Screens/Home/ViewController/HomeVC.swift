@@ -12,9 +12,13 @@ final class HomeVC : UIViewController {
     
     var homeViewModel : HomeViewModelContracts = HomeViewModel(moviesRepository: MoviesRepository(moviesDataService: MoviesService()))
     
+    @IBOutlet weak var upComingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var nowPlayingCollectionView: SliderCollectionView!
     @IBOutlet weak var upComingTableView: UpComingTableView!
+    
+    
+    @IBOutlet weak var upComingErrorText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +31,7 @@ final class HomeVC : UIViewController {
         homeViewModel.delegate = self
         upComingTableView.homeViewModel = homeViewModel
         nowPlayingCollectionView.homeViewModel = homeViewModel
-        homeViewModel.loadUpComing()
+        homeViewModel.loadUpComing(page: 1)
         homeViewModel.loadNowPlaying()
     }
 }
@@ -40,11 +44,15 @@ extension HomeVC : HomeViewModelDelegate {
             self.nowPlayingCollectionView.reloadData()
             self.pageController.numberOfPages = count
         case .refreshUpComing:
+            self.upComingErrorText.isHidden = true
             self.upComingTableView.reloadData()
         case .nowPlayingError(_):
             break
-        case .upComingError(_):
-            break
+        case .upComingIndicator(let status):
+            self.upComingIndicator.isHidden = status
+        case .upComingError(let error):
+            self.upComingErrorText.isHidden = false
+            self.upComingErrorText.text = error.statusMessage
         }
     }
 }

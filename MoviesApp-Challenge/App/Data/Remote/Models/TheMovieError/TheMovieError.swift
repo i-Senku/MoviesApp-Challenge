@@ -10,7 +10,7 @@ import Foundation
 struct TheMovieError : Error,Decodable{
     
     let statusCode : Int?
-    let statusMessage : String?
+    let statusMessage : String
     let success : Bool?
     
     enum CodingsKey : String,CodingKey {

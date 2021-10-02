@@ -14,8 +14,14 @@ protocol HomeViewModelContracts {
     var delegate : HomeViewModelDelegate? { get set }
     var moviesRepository : MoviesRepositoryContracts { get set }
     
+    var paginableStatus : Bool { get set }
+    
+    var upComingMovies : [Movie] { get set }
+    var nowPlayinMovies : [Movie] { get set }
+    
     //MARK: - Functions
-    func loadUpComing()
+    func loadUpComing(page : Int)
+    func loadMoreUpComing()
     func loadNowPlaying()
     func refresh()
 }
@@ -26,9 +32,8 @@ enum HomeViewModelOutput{
     case refreshUpComing
     case nowPlayingError(TheMovieError)
     case upComingError(TheMovieError)
+    case upComingIndicator(isHidden : Bool)
 }
-
-
 
 //MARK: - Delegate
 protocol HomeViewModelDelegate : AnyObject {

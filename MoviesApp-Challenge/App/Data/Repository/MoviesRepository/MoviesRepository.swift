@@ -25,7 +25,7 @@ final class MoviesRepository : MoviesRepositoryContracts {
             case .success(let theMovieResponseModel):
                 completion(.success(theMovieResponseModel))
             case .failure(let networkError):
-                completion(.failure(networkError.toTheMovieError()!))
+                completion(.failure(networkError.toTheMovieError()))
             }
         }
         
@@ -41,8 +41,9 @@ final class MoviesRepository : MoviesRepositoryContracts {
             case .success(let theMovieResponseModel):
                 completion(.success(theMovieResponseModel))
             case .failure(let networkError):
-                completion(.failure(networkError.toTheMovieError()!))
+                completion(.failure(networkError.toTheMovieError()))
             }
+            
         }
         
     }

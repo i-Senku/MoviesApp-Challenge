@@ -26,7 +26,7 @@ final class MoviesService  : MoviesDataService{
         completion: @escaping (Result<BaseTheMovie<Movie>, NetworkError>) -> Void) {
         
         NetworkExecuter.shared.execute(
-            route: TheMovieAPI.upComing(language: language, page: page),
+            route: TheMovieAPI.nowPlaying(language: language, page: page),
             responseModel: BaseTheMovie<Movie>.self,
             completion: completion)
     }

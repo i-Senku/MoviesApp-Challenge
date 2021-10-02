@@ -8,7 +8,11 @@
 import Foundation
 
 extension String {
-    func toPoster() -> URL?{
-        return URL(string: "https://image.tmdb.org/t/p/w185/\(self)")
+    func backDropImage() -> URL?{
+        return URL(string: "https://image.tmdb.org/t/p/original/\(self)")
+    }
+    
+    func posterImage() -> URL?{
+        return URL(string: "https://image.tmdb.org/t/p/w154/\(self)")
     }
 }

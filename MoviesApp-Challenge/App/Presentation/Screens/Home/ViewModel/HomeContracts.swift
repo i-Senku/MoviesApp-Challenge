@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Contracts
 protocol HomeViewModelContracts {
     var nowPlayingModel : BaseTheMovie<Movie>? { get set }
     var upComingModel : BaseTheMovie<Movie>? { get set }
@@ -19,8 +20,9 @@ protocol HomeViewModelContracts {
     func refresh()
 }
 
+//MARK: - Outputs
 enum HomeViewModelOutput{
-    case refreshNowPlaying
+    case refreshNowPlaying(count:Int)
     case refreshUpComing
     case nowPlayingError(TheMovieError)
     case upComingError(TheMovieError)
@@ -28,6 +30,7 @@ enum HomeViewModelOutput{
 
 
 
+//MARK: - Delegate
 protocol HomeViewModelDelegate : AnyObject {
     func handleOutput(output : HomeViewModelOutput)
 }

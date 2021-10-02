@@ -37,7 +37,7 @@ final class HomeViewModel : HomeViewModelContracts{
             switch result{
             case .success(let baseTheMovie):
                 self.nowPlayingModel = baseTheMovie
-                self.notify(.refreshNowPlaying)
+                self.notify(.refreshNowPlaying(count: baseTheMovie.results.count))
             case .failure(let error):
                 self.notify(.nowPlayingError(error))
             }

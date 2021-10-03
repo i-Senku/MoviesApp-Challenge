@@ -6,10 +6,9 @@
 //
 
 
-//MARK: - All Storyboard
+//MARK: - All Storyboards
 enum AppStoryBoard : String {
     case home = "Home"
     case movieDetail = "MovieDetail"
-    case favoriteMovies = "FavoriteMovies"
 }
 

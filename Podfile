@@ -6,7 +6,6 @@ target 'MoviesApp-Challenge' do
   use_frameworks!
 
   # Pods for MoviesApp-Challenge
-pod 'RealmSwift'
 pod 'Kingfisher', '~> 7.0'
 
   target 'MoviesApp-ChallengeTests' do

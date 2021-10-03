@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tZp-So-Yhw" customClass="MainScrollView" customModule="MoviesApp_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyg-eU-3H2">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Knp-sU-JaB" customClass="UpComingTableView" customModule="MoviesApp_Challenge" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="232" width="414" height="542"/>
+                                                <rect key="frame" x="0.0" y="242.5" width="414" height="565.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                                 <prototypes>
@@ -39,7 +39,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SxS-91-5DD" customClass="SliderCollectionView" customModule="MoviesApp_Challenge" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="232"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="242.5"/>
                                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ozE-gb-LHz">
@@ -50,7 +50,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sliderCollections" id="dIn-dB-3u7" customClass="SliderCell" customModule="MoviesApp_Challenge" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="6" width="414" height="220"/>
+                                                        <rect key="frame" x="0.0" y="11.5" width="414" height="220"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XkU-JG-kxg">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
@@ -62,11 +62,11 @@
                                                 </cells>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="axY-aj-z6G">
-                                                <rect key="frame" x="0.0" y="196" width="414" height="28"/>
+                                                <rect key="frame" x="0.0" y="206.5" width="414" height="28"/>
                                                 <color key="pageIndicatorTintColor" white="1" alpha="0.70296978480000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </pageControl>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOp-Ge-20o">
-                                                <rect key="frame" x="180.5" y="116" width="53.5" height="0.0"/>
+                                                <rect key="frame" x="180.5" y="121" width="53.5" height="0.0"/>
                                                 <subviews>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ciq-KT-LXr">
                                                         <rect key="frame" x="8" y="-10" width="37.5" height="20.5"/>
@@ -90,7 +90,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFg-fj-B6e">
-                                                <rect key="frame" x="8" y="492.5" width="398" height="21"/>
+                                                <rect key="frame" x="8" y="514.5" width="398" height="21"/>
                                                 <subviews>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0XH-0D-V0R">
                                                         <rect key="frame" x="180.5" y="-8" width="37" height="37"/>
@@ -146,7 +146,7 @@
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tZp-So-Yhw" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="FQA-6M-Cgh"/>
-                            <constraint firstItem="tZp-So-Yhw" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Nfv-rv-2Tn"/>
+                            <constraint firstItem="tZp-So-Yhw" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="Nfv-rv-2Tn"/>
                             <constraint firstItem="kFg-fj-B6e" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.961353" id="cqX-sh-q8t"/>
                             <constraint firstItem="tZp-So-Yhw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oUI-cJ-voN"/>
                             <constraint firstItem="tZp-So-Yhw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="qt3-wS-thm"/>

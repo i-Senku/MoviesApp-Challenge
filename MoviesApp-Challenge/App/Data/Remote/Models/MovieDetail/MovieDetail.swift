@@ -18,6 +18,7 @@ struct MovieDetail : Decodable {
     let voteAverage : Double
     let title : String
     let tagline : String?
+    let posterPath : String
     
     enum CodingKeys : String, CodingKey{
         case backdropPath = "backdrop_path"
@@ -30,5 +31,6 @@ struct MovieDetail : Decodable {
         case voteAverage = "vote_average"
         case title = "title"
         case tagline = "tagline"
+        case posterPath = "poster_path"
     }
 }

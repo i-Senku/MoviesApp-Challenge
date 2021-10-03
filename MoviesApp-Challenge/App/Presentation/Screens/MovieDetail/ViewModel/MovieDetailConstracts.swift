@@ -15,6 +15,11 @@ protocol MovieDetailViewModelContracts {
     
     //MARK: - Functions
     func loadMovieDetail()
+    func showIMDB()
+}
+
+enum MovieDetailViewModelRoute {
+    case imdb(URL)
 }
 
 enum MovieDetailViewModelOutput {
@@ -25,4 +30,5 @@ enum MovieDetailViewModelOutput {
 
 protocol MovieDetailViewModelDelegate : AnyObject{
     func handleOutput(output : MovieDetailViewModelOutput)
+    func navigate(to route : MovieDetailViewModelRoute)
 }

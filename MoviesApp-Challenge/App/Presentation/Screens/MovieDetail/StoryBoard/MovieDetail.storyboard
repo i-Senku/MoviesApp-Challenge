@@ -57,6 +57,11 @@
                                 <action selector="back:" destination="Y6W-OH-hqX" id="NPL-gv-ivo"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="text.justify" catalog="system" id="iVR-9N-ZZx">
+                            <connections>
+                                <action selector="showMenu:" destination="Y6W-OH-hqX" id="OVU-tx-PRX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailBodyErrorText" destination="ayY-KO-sZT" id="bvD-G2-Wfe"/>
@@ -90,6 +95,7 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="text.justify" catalog="system" width="128" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

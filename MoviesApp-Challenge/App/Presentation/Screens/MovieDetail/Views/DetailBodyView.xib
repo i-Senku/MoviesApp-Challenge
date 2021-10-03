@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailBodyView" customModule="MoviesApp_Challenge" customModuleProvider="target">
             <connections>
                 <outlet property="date" destination="l1j-yC-rH0" id="5VX-hW-Lec"/>
+                <outlet property="imdbBanner" destination="QlK-7p-uPy" id="p6S-7U-Jhy"/>
                 <outlet property="overview" destination="Zyx-qb-ytC" id="wBN-cB-CXL"/>
                 <outlet property="title" destination="bRv-cc-Dfw" id="nRE-VG-Ek8"/>
                 <outlet property="totalAverage" destination="p4O-ai-7gO" id="6Qf-lY-6OK"/>
@@ -126,6 +127,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="JAZ-g4-Hx7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4DX-Z2-Aiv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JAZ-g4-Hx7" secondAttribute="trailing" id="thy-p9-J0q"/>
@@ -135,6 +137,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="392.02898550724643" y="-177.79017857142856"/>
         </view>
+        <tapGestureRecognizer id="qYF-OD-Zuz">
+            <connections>
+                <action selector="showIMDB:" destination="-1" id="5hC-ut-QC8"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="imdb" width="2400" height="1167"/>

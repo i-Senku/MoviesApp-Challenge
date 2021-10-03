@@ -5,6 +5,8 @@
 //  Created by Ercan Garip on 2.10.2021.
 //
 
+import Foundation
+
 final class MovieDetailViewModel : MovieDetailViewModelContracts{
     weak var delegate: MovieDetailViewModelDelegate?
     var movieRepository: MoviesRepositoryContracts
@@ -32,6 +34,15 @@ final class MovieDetailViewModel : MovieDetailViewModelContracts{
                     self.notify(.errorMovieDetail(error: error))
                 }
                 
+            }
+        }
+    }
+    
+    func showIMDB() {
+        if let movieDetail = movieDetail{
+            guard let imdbId = movieDetail.imdbId else { return }
+            if let url =  URL(string: "https://www.imdb.com/title/\(imdbId)/"){
+                delegate?.navigate(to: .imdb(url))
             }
         }
     }

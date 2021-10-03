@@ -14,10 +14,13 @@ final class DetailBodyView: UIView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var overview: UILabel!
     
+    @IBOutlet weak var imdbBanner: UIImageView!
     
     override func awakeFromNib() {
         loadView()
     }
+    
+    
     
     func populate(_ movieDetail : MovieDetail){
         title.text = movieDetail.title
@@ -25,7 +28,6 @@ final class DetailBodyView: UIView {
         date.text = movieDetail.releaseDate
         totalAverage.text = String(movieDetail.voteAverage)
     }
-    
     
     private func loadView() {
         guard let contentView = loadViewFromNib(nibName: "DetailBodyView") else { return }

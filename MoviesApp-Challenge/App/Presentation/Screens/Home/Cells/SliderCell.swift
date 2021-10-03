@@ -10,7 +10,7 @@ import Kingfisher
 
 
 
-class SliderCell: UICollectionViewCell {
+final class SliderCell: UICollectionViewCell {
     static let cellId = "sliderCollections"
     
     @IBOutlet weak var overview: UILabel!
@@ -22,7 +22,7 @@ class SliderCell: UICollectionViewCell {
     }
     
     func populate(movie : Movie?){
-        if let thumbnailURL = movie?.backdrop_path?.backDropImage(){
+        if let thumbnailURL = movie?.backdrop_path?.originalImage(){
             DispatchQueue.main.async {
                 self.poster.kf.setImage(with: thumbnailURL,options: [
                     .processor(DownsamplingImageProcessor(size: CGSize(width: self.poster.bounds.width, height: self.poster.bounds.height))),

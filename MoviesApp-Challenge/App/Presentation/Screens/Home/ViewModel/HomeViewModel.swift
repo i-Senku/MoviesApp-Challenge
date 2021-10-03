@@ -20,9 +20,10 @@ final class HomeViewModel : HomeViewModelContracts{
     weak var delegate: HomeViewModelDelegate?
     
     var upComingMovies: [Movie] = []
-    var nowPlayinMovies: [Movie] = []
+    var nowPlayingMovies: [Movie] = []
     var paginableStatus: Bool = true
     
+    //MARK: - Load UpComing
     func loadUpComing(page : Int = 1) {
         moviesRepository.upComing(language: nil, page: page) {
             [weak self] result in
@@ -43,13 +44,14 @@ final class HomeViewModel : HomeViewModelContracts{
         }
     }
     
+    //MARK: - Load NowPlaying
     func loadNowPlaying() {
         moviesRepository.nowPlaying(language: nil, page: nil) {[weak self] result in
             guard let self = self else {return}
             switch result{
             case .success(let baseTheMovie):
                 self.nowPlayingModel = baseTheMovie
-                self.nowPlayinMovies.append(contentsOf: baseTheMovie.results)
+                self.nowPlayingMovies.append(contentsOf: baseTheMovie.results)
                 self.notify(.indicatorOfSlider(isAnimate: false))
                 self.notify(.reloadSlider(count: baseTheMovie.results.count))
             case .failure(let error):
@@ -59,6 +61,7 @@ final class HomeViewModel : HomeViewModelContracts{
         }
     }
     
+    //MARK: - Lazy Load UpComing
     func loadMoreUpComing() {
         if paginableStatus {
             if let upComingModel = upComingModel {
@@ -71,6 +74,7 @@ final class HomeViewModel : HomeViewModelContracts{
         }
     }
     
+    //MARK: - Pull to refresh UpComing
     func refresh() {
         notify(.indicatorOfUpComing(isAnimate: true))
         moviesRepository.upComing(language: nil, page: 1) {
@@ -90,6 +94,22 @@ final class HomeViewModel : HomeViewModelContracts{
             }
             
         }
+    }
+    
+    //MARK: - Select Movie From UpComing
+    func didSelectUpComing(indexPath: IndexPath) {
+        let movie = upComingMovies[indexPath.row]
+        let viewModel = MovieDetailViewModel(movieRepository: MoviesRepository(moviesDataService: MoviesService()))
+        viewModel.movie = movie
+        delegate?.navigate(navigation: .movieDetail(viewModel: viewModel))
+    }
+    
+    //MARK: - Select Movie From NowPlaying
+    func didSelectNowPlaying(indexPath: IndexPath) {
+        let movie = nowPlayingMovies[indexPath.row]
+        let viewModel = MovieDetailViewModel(movieRepository: MoviesRepository(moviesDataService: MoviesService()))
+        viewModel.movie = movie
+        delegate?.navigate(navigation: .movieDetail(viewModel: viewModel))
     }
     
     private func notify(_ output : HomeViewModelOutput){

@@ -28,7 +28,6 @@ final class MoviesRepository : MoviesRepositoryContracts {
                 completion(.failure(networkError.toTheMovieError()))
             }
         }
-        
     }
     
     func nowPlaying(
@@ -45,7 +44,18 @@ final class MoviesRepository : MoviesRepositoryContracts {
             }
             
         }
-        
+    }
+    
+    func movieDetail(
+        movieId: String, completion: @escaping (Result<MovieDetail, TheMovieError>) -> Void) {
+        moviesDataService.movieDetail(movieId: movieId) { result in
+            switch result {
+            case .success(let movieDetail):
+                completion(.success(movieDetail))
+            case .failure(let error):
+                completion(.failure(error.toTheMovieError()))
+            }
+        }
     }
     
 }

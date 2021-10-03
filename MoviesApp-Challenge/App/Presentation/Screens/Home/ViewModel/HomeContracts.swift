@@ -17,26 +17,29 @@ protocol HomeViewModelContracts {
     var paginableStatus : Bool { get set }
     
     var upComingMovies : [Movie] { get set }
-    var nowPlayinMovies : [Movie] { get set }
+    var nowPlayingMovies : [Movie] { get set }
     
     //MARK: - Functions
     func loadUpComing(page : Int)
     func loadMoreUpComing()
     func loadNowPlaying()
     func refresh()
+    func didSelectUpComing(indexPath : IndexPath)
+    func didSelectNowPlaying(indexPath : IndexPath)
+}
+
+enum HomeViewModelRoute {
+    case movieDetail(viewModel : MovieDetailViewModelContracts)
 }
 
 //MARK: - Outputs
 enum HomeViewModelOutput{
-    //MARK: - Reload
     case reloadSlider(count:Int)
     case reloadUpComingTableView
     
-    //MARK: - Errors
     case nowPlayingError(TheMovieError)
     case upComingError(TheMovieError)
     
-    //MARK: - Indicators
     case indicatorOfUpComing(isAnimate : Bool)
     case indicatorOfSlider(isAnimate : Bool)
     case refreshed
@@ -45,4 +48,5 @@ enum HomeViewModelOutput{
 //MARK: - Delegate
 protocol HomeViewModelDelegate : AnyObject {
     func handleOutput(output : HomeViewModelOutput)
+    func navigate(navigation : HomeViewModelRoute)
 }

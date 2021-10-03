@@ -12,6 +12,7 @@ enum TheMovieAPI : BaseClientGenerator {
     
     case nowPlaying(language : String = "en-US",page : Int)
     case upComing(language : String = "en-US",page : Int)
+    case movieDetail(movieId : String)
     
     var scheme: String { "https" }
     
@@ -23,6 +24,8 @@ enum TheMovieAPI : BaseClientGenerator {
             return "/3/movie/now_playing"
         case .upComing:
             return "/3/movie/upcoming"
+        case .movieDetail(let movieId):
+            return "/3/movie/\(movieId)"
         }
     }
     
@@ -33,7 +36,8 @@ enum TheMovieAPI : BaseClientGenerator {
                 URLQueryItem(name: "language", value: language),
                 URLQueryItem(name: "page", value: String(page)),
             ]
-
+        default :
+            return nil
         }
     }
     

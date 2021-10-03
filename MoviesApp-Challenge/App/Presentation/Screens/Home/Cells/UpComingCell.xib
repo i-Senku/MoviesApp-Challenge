@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,48 +41,36 @@
                             <constraint firstAttribute="height" constant="20" id="Eke-WF-gaX"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTV-sx-X2V">
-                        <rect key="frame" x="128" y="41" width="516" height="61"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-Np-xTm">
-                                <rect key="frame" x="0.0" y="0.0" width="516" height="16"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                <color key="textColor" red="0.55294117649999996" green="0.59999999999999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RAt-Np-xTm" secondAttribute="bottom" id="6tI-UM-Spa"/>
-                            <constraint firstItem="RAt-Np-xTm" firstAttribute="top" secondItem="JTV-sx-X2V" secondAttribute="top" id="jPo-RC-hTR"/>
-                            <constraint firstAttribute="trailing" secondItem="RAt-Np-xTm" secondAttribute="trailing" id="mQ7-A5-Ntu"/>
-                            <constraint firstItem="RAt-Np-xTm" firstAttribute="leading" secondItem="JTV-sx-X2V" secondAttribute="leading" id="tWi-ap-OoA"/>
-                        </constraints>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iec-sN-PPA">
                         <rect key="frame" x="128" y="110" width="516" height="15"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" red="0.55294117649999996" green="0.59999999999999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-Np-xTm">
+                        <rect key="frame" x="128" y="41" width="516" height="16"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                        <color key="textColor" red="0.55294117649999996" green="0.59999999999999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="RAt-Np-xTm" firstAttribute="leading" secondItem="6wb-Ua-pDI" secondAttribute="trailing" constant="8" id="0zf-yU-px9"/>
                     <constraint firstItem="G6b-vc-v4t" firstAttribute="leading" secondItem="6wb-Ua-pDI" secondAttribute="trailing" constant="8" id="5ab-Rd-vbr"/>
+                    <constraint firstItem="RAt-Np-xTm" firstAttribute="trailing" secondItem="G6b-vc-v4t" secondAttribute="trailing" id="7Cw-ls-K4O"/>
                     <constraint firstItem="G6b-vc-v4t" firstAttribute="trailing" secondItem="UwR-sB-P4e" secondAttribute="leading" constant="-8" id="7po-89-TU5"/>
-                    <constraint firstItem="JTV-sx-X2V" firstAttribute="trailing" secondItem="G6b-vc-v4t" secondAttribute="trailing" id="AsN-5L-sUs"/>
                     <constraint firstAttribute="bottom" secondItem="Iec-sN-PPA" secondAttribute="bottom" constant="16" id="EFz-Co-OQA"/>
+                    <constraint firstItem="RAt-Np-xTm" firstAttribute="top" secondItem="G6b-vc-v4t" secondAttribute="bottom" constant="8" id="F1j-94-KKN"/>
                     <constraint firstItem="6wb-Ua-pDI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="G2X-c8-UgK"/>
-                    <constraint firstItem="JTV-sx-X2V" firstAttribute="top" secondItem="G6b-vc-v4t" secondAttribute="bottom" constant="8" id="Iig-AT-qOk"/>
                     <constraint firstAttribute="bottom" secondItem="6wb-Ua-pDI" secondAttribute="bottom" constant="16" id="VMg-NQ-3Zc"/>
                     <constraint firstAttribute="trailing" secondItem="UwR-sB-P4e" secondAttribute="trailing" constant="16" id="aJp-fu-rue"/>
-                    <constraint firstItem="JTV-sx-X2V" firstAttribute="bottom" secondItem="Iec-sN-PPA" secondAttribute="top" constant="-8" id="bR4-vc-MKt"/>
                     <constraint firstItem="G6b-vc-v4t" firstAttribute="top" secondItem="6wb-Ua-pDI" secondAttribute="top" id="coZ-oE-wVQ"/>
                     <constraint firstItem="Iec-sN-PPA" firstAttribute="leading" secondItem="6wb-Ua-pDI" secondAttribute="trailing" constant="8" id="hPS-Tl-Poo"/>
                     <constraint firstItem="UwR-sB-P4e" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ink-aV-jZ0"/>
                     <constraint firstItem="Iec-sN-PPA" firstAttribute="trailing" secondItem="G6b-vc-v4t" secondAttribute="trailing" id="jaj-9A-I8E"/>
+                    <constraint firstItem="Iec-sN-PPA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RAt-Np-xTm" secondAttribute="bottom" constant="8" id="mPW-r5-pZT"/>
                     <constraint firstItem="6wb-Ua-pDI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="pUF-lT-ih8"/>
-                    <constraint firstItem="JTV-sx-X2V" firstAttribute="leading" secondItem="6wb-Ua-pDI" secondAttribute="trailing" constant="8" id="so8-eJ-dpt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -99,8 +86,5 @@
     <resources>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="harry" width="600" height="800"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -5,7 +5,6 @@
 //  Created by Ercan Garip on 1.10.2021.
 //
 
-import Foundation
 import UIKit
 
 final class HomeVC : UIViewController {
@@ -26,7 +25,7 @@ final class HomeVC : UIViewController {
     }
     
     
-    fileprivate func start(){
+    private func start(){
         nowPlayingCollectionView.sliderDelegate = self
         homeViewModel.delegate = self
         
@@ -76,10 +75,17 @@ extension HomeVC : HomeViewModelDelegate {
             
         }
     }
+    
+    func navigate(navigation: HomeViewModelRoute) {
+        switch navigation {
+        case .movieDetail(let viewModel):
+            let movieDetailVC = MovieDetailBuilder.make(viewModel)
+            show(movieDetailVC, sender: true)
+        }
+    }
 }
 
 //MARK: - SliderCollectionView Delegate
-
 extension HomeVC : SliderCollectionViewDelegate {
     func currentPage(page: Int) {
         pageController.currentPage = page

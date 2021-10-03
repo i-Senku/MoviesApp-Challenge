@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpComingTableView: UITableView {
+final class UpComingTableView: UITableView {
     
     var homeViewModel : HomeViewModelContracts?
     
@@ -42,7 +42,7 @@ extension UpComingTableView : UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("asdsad")
+        homeViewModel?.didSelectUpComing(indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -30,4 +30,10 @@ final class MoviesService  : MoviesDataService{
             responseModel: BaseTheMovie<Movie>.self,
             completion: completion)
     }
+    
+    func movieDetail(
+        movieId: String, completion: @escaping (Result<MovieDetail, NetworkError>) -> Void) {
+        
+        NetworkExecuter.shared.execute(route: TheMovieAPI.movieDetail(movieId: movieId), responseModel: MovieDetail.self, completion: completion)
+    }
 }

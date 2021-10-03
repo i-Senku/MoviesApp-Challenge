@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class UpComingCell: UITableViewCell {
+final class UpComingCell: UITableViewCell {
     static let cellId = "upComingCell"
     
     @IBOutlet weak var releaseDate: UILabel!

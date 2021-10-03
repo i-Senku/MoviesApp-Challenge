@@ -9,7 +9,7 @@ import Foundation
 
 struct TheMovieError : Error,Decodable{
     
-    let statusCode : Int?
+    let statusCode : Int
     let statusMessage : String
     let success : Bool?
     

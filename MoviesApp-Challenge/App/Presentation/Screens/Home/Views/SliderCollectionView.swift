@@ -11,7 +11,7 @@ protocol SliderCollectionViewDelegate : AnyObject {
     func currentPage(page : Int)
 }
 
-class SliderCollectionView: UICollectionView {
+final class SliderCollectionView: UICollectionView {
     
     var homeViewModel : HomeViewModelContracts?
     weak var sliderDelegate : SliderCollectionViewDelegate?
@@ -26,11 +26,13 @@ class SliderCollectionView: UICollectionView {
     }
     
     private func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(self.moveToNext), userInfo: nil, repeats: true)
+        }
     }
     
     @objc func moveToNext(){
-        if let totalPage = homeViewModel?.nowPlayingModel?.results.count{
+        if let totalPage = homeViewModel?.nowPlayingMovies.count{
             if currentPage < totalPage - 1{
                 currentPage += 1
             }else{
@@ -45,15 +47,19 @@ class SliderCollectionView: UICollectionView {
 //MARK: - Data Source
 extension SliderCollectionView : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return homeViewModel?.nowPlayingModel?.results.count ?? 0
+        return homeViewModel?.nowPlayingMovies.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SliderCell.cellId, for: indexPath) as! SliderCell
         cell.backgroundColor = .blue
-        let movie = homeViewModel?.nowPlayingModel?.results[indexPath.row]
+        let movie = homeViewModel?.nowPlayingMovies[indexPath.row]
         cell.populate(movie: movie)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        homeViewModel?.didSelectNowPlaying(indexPath: indexPath)
     }
 }
 

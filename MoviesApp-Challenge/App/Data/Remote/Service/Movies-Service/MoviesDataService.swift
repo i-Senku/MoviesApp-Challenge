@@ -9,5 +9,8 @@ import Foundation
 
 protocol MoviesDataService {
     func upComing(language : String,page : Int,completion : @escaping (Result<BaseTheMovie<Movie>,NetworkError>) -> Void)
+    
     func nowPlaying(language : String,page : Int,completion : @escaping (Result<BaseTheMovie<Movie>,NetworkError>) -> Void)
+    
+    func movieDetail(movieId : String,completion : @escaping (Result<MovieDetail,NetworkError>)->Void)
 }

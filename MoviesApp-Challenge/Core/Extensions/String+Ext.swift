@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    func backDropImage() -> URL?{
+    func originalImage() -> URL?{
         return URL(string: "https://image.tmdb.org/t/p/original/\(self)")
     }
     

@@ -8,5 +8,8 @@
 import Foundation
 class AppRepository {
     static var shared = AppRepository()
-    let movieRepository = MoviesRepository(moviesDataService: MoviesService(), moviesLocalDataService: FavoritesLocalService())
+    
+    let movieRepository = MoviesRepository(
+        moviesDataService: MoviesService(),
+        moviesLocalDataService: FavoritesLocalService())
 }

@@ -40,7 +40,13 @@
                             <constraint firstItem="CfS-a8-R69" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="urR-i2-pJf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorite Movies" id="2Sz-dJ-aQV"/>
+                    <navigationItem key="navigationItem" title="Favorite Movies" id="2Sz-dJ-aQV">
+                        <barButtonItem key="rightBarButtonItem" image="trash.fill" catalog="system" id="eHT-FB-q2x">
+                            <connections>
+                                <action selector="removeAll:" destination="Y6W-OH-hqX" id="usT-FV-c5D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="favoriteMoviesTableView" destination="CfS-a8-R69" id="5Xg-nt-VXv"/>
@@ -73,6 +79,7 @@
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

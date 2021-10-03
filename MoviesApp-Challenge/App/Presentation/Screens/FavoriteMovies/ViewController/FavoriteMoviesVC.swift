@@ -23,6 +23,9 @@ class FavoriteMoviesVC: UIViewController {
         viewModel.loadFavorites()
     }
 
+    @IBAction func removeAll(_ sender: Any) {
+        viewModel.clear()
+    }
 }
 extension FavoriteMoviesVC : FavoriteMovieViewModelDelegate {
     func handleOutput(output: FavoriteMovieViewModelOutput) {

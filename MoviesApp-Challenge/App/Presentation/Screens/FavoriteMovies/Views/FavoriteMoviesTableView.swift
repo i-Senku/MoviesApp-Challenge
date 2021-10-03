@@ -20,8 +20,19 @@ final class FavoriteMoviesTableView: UITableView {
 
 extension FavoriteMoviesTableView : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.movieList.count ?? 0
-    }
+        if let count = viewModel?.movieList.count {
+            if count == 0 {
+                tableView.setEmptyView(title: "Empty", message: "No movies have been added to favorites yet")
+            }else{
+                tableView.restore()
+            }
+            return count
+            
+        }else{
+            tableView.setEmptyView(title: "Empty", message: "No movies have been added to favorites yet")
+            return 0
+        }
+}
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UpComingCell.cellId) as! UpComingCell

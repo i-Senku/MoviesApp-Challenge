@@ -42,7 +42,8 @@ final class MovieDetailVC: UIViewController {
         let alertVC = UIAlertController(title: "Menu", message: nil, preferredStyle: .actionSheet)
         let isAvailable = detailViewModel.favoriteItemIsAvailable() != nil
         
-        let addFavoriteButton = UIAlertAction(title: isAvailable ? "Remove From Favorites" : "Add to Favorites", style: .default) { _ in
+        let addFavoriteAction = UIAlertAction(title: isAvailable ? "Remove From Favorites" : "Add to Favorites", style: .default) {[weak self]  _ in
+            guard let self = self else {return}
             
             if isAvailable {
                 self.detailViewModel.removeFavorite()
@@ -50,11 +51,17 @@ final class MovieDetailVC: UIViewController {
                 self.detailViewModel.addFavorite()
             }
         }
+        
+        let showImdbAction = UIAlertAction(title: "Show in IMDB", style: .default) { [weak self] _ in
+            guard let self = self else {return}
+            self.detailViewModel.showIMDB()
+        }
 
         let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: nil)
 
         cancelButton.setValue(UIColor.red, forKey: "titleTextColor")
-        alertVC.addAction(addFavoriteButton)
+        alertVC.addAction(addFavoriteAction)
+        alertVC.addAction(showImdbAction)
         alertVC.addAction(cancelButton)
         present(alertVC, animated: true, completion: nil)
     }

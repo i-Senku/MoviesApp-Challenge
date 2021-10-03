@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie : BaseResult, Decodable {
+struct Movie : Decodable {
     
     var adult : Bool
     var backdrop_path : String?

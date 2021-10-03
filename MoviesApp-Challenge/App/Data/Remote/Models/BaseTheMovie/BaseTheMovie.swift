@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BaseTheMovie<T : BaseResult> : Decodable {
+struct BaseTheMovie<T : Decodable> : Decodable {
     let totalPages : Int
     let totalResults : Int
     let page : Int

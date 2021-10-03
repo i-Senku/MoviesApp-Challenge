@@ -90,13 +90,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFg-fj-B6e">
-                                                <rect key="frame" x="8" y="514.5" width="398" height="21"/>
+                                                <rect key="frame" x="8" y="525" width="398" height="0.0"/>
                                                 <subviews>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0XH-0D-V0R">
-                                                        <rect key="frame" x="180.5" y="-8" width="37" height="37"/>
+                                                        <rect key="frame" x="180.5" y="-18.5" width="37" height="37"/>
                                                     </activityIndicatorView>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avp-CX-fBU">
-                                                        <rect key="frame" x="162" y="0.0" width="74" height="21"/>
+                                                        <rect key="frame" x="162" y="-10.5" width="74" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" secondItem="avp-CX-fBU" secondAttribute="height" id="54R-2X-uON"/>
+                                                    <constraint firstAttribute="height" id="7dU-H7-e7L"/>
                                                     <constraint firstItem="avp-CX-fBU" firstAttribute="centerX" secondItem="kFg-fj-B6e" secondAttribute="centerX" id="LXU-JF-kti"/>
                                                     <constraint firstItem="0XH-0D-V0R" firstAttribute="centerY" secondItem="kFg-fj-B6e" secondAttribute="centerY" id="Qav-yF-Igs"/>
                                                     <constraint firstItem="avp-CX-fBU" firstAttribute="centerY" secondItem="kFg-fj-B6e" secondAttribute="centerY" id="lzM-Re-APh"/>

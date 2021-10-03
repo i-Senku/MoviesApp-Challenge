@@ -9,8 +9,10 @@ import UIKit
 
 final class HomeVC : UIViewController {
     
-    var homeViewModel : HomeViewModelContracts = HomeViewModel(moviesRepository:AppRepository.shared.movieRepository)
+    var homeViewModel : HomeViewModelContracts = HomeViewModel(moviesRepository: MoviesRepository(moviesDataService: MoviesService()))
     
+
+    @IBOutlet weak var mainScrollView: MainScrollView!
     @IBOutlet weak var sliderErrorText: UILabel!
     @IBOutlet weak var sliderIndicator: UIActivityIndicatorView!
     @IBOutlet weak var upComingIndicator: UIActivityIndicatorView!
@@ -18,6 +20,7 @@ final class HomeVC : UIViewController {
     @IBOutlet weak var nowPlayingCollectionView: SliderCollectionView!
     @IBOutlet weak var upComingTableView: UpComingTableView!
     @IBOutlet weak var upComingErrorText: UILabel!
+    var refreshControl : UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ final class HomeVC : UIViewController {
         
         upComingTableView.homeViewModel = homeViewModel
         nowPlayingCollectionView.homeViewModel = homeViewModel
+        mainScrollView.homeViewModel = homeViewModel
         
         homeViewModel.loadUpComing(page: 1)
         homeViewModel.loadNowPlaying()
@@ -55,7 +59,7 @@ extension HomeVC : HomeViewModelDelegate {
             self.sliderErrorText.text = error.statusMessage
             
         case .refreshed:
-            self.upComingTableView.refreshControl?.endRefreshing()
+            self.mainScrollView.refreshControl?.endRefreshing()
             
         case .indicatorOfUpComing(let isAnimate):
             if isAnimate {

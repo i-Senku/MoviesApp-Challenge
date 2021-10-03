@@ -16,38 +16,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g2i-WC-LsT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zz-f0-9T4" customClass="DetailBodyView" customModule="MoviesApp_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="357" width="414" height="505"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayY-KO-sZT">
-                                <rect key="frame" x="186" y="599" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-24-Pl6">
-                                <rect key="frame" x="188.5" y="591" width="37" height="37"/>
-                            </activityIndicatorView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kXU-0H-CK9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAL-k6-7Dy">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TgG-Vl-TQk">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkE-6j-PxN" customClass="DetailBodyView" customModule="MoviesApp_Challenge" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="269" width="414" height="505"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQP-Gd-6vc">
+                                                        <rect key="frame" x="186" y="242" width="42" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3vn-id-sYZ">
+                                                        <rect key="frame" x="197" y="242.5" width="20" height="20"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="3vn-id-sYZ" firstAttribute="centerY" secondItem="OkE-6j-PxN" secondAttribute="centerY" id="AgP-d8-p2k"/>
+                                                    <constraint firstItem="rQP-Gd-6vc" firstAttribute="centerX" secondItem="OkE-6j-PxN" secondAttribute="centerX" id="gZs-SW-Bdw"/>
+                                                    <constraint firstItem="rQP-Gd-6vc" firstAttribute="centerY" secondItem="OkE-6j-PxN" secondAttribute="centerY" id="hNN-wu-3hF"/>
+                                                    <constraint firstItem="3vn-id-sYZ" firstAttribute="centerX" secondItem="OkE-6j-PxN" secondAttribute="centerX" id="vv4-i7-CR7"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="TgG-Vl-TQk" firstAttribute="leading" secondItem="yAL-k6-7Dy" secondAttribute="leading" id="29J-pg-pTQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="TgG-Vl-TQk" secondAttribute="trailing" id="6zm-4G-ZIW"/>
+                                            <constraint firstAttribute="trailing" secondItem="OkE-6j-PxN" secondAttribute="trailing" id="JWJ-KO-N7F"/>
+                                            <constraint firstItem="TgG-Vl-TQk" firstAttribute="top" secondItem="yAL-k6-7Dy" secondAttribute="top" id="cKQ-SE-O20"/>
+                                            <constraint firstItem="OkE-6j-PxN" firstAttribute="top" secondItem="TgG-Vl-TQk" secondAttribute="bottom" id="lGG-CC-JeW"/>
+                                            <constraint firstAttribute="bottom" secondItem="OkE-6j-PxN" secondAttribute="bottom" id="nyK-8W-Lm1"/>
+                                            <constraint firstItem="OkE-6j-PxN" firstAttribute="leading" secondItem="yAL-k6-7Dy" secondAttribute="leading" id="vFu-gS-T07"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yAL-k6-7Dy" firstAttribute="height" secondItem="kXU-0H-CK9" secondAttribute="height" priority="250" id="9O8-C1-Pbr"/>
+                                    <constraint firstAttribute="trailing" secondItem="yAL-k6-7Dy" secondAttribute="trailing" id="GrE-Bm-f51"/>
+                                    <constraint firstItem="yAL-k6-7Dy" firstAttribute="leading" secondItem="kXU-0H-CK9" secondAttribute="leading" id="h6E-dA-sUQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="yAL-k6-7Dy" secondAttribute="bottom" id="k89-2J-XFL"/>
+                                    <constraint firstItem="yAL-k6-7Dy" firstAttribute="top" secondItem="kXU-0H-CK9" secondAttribute="top" id="vkj-nk-snT"/>
+                                    <constraint firstItem="yAL-k6-7Dy" firstAttribute="width" secondItem="kXU-0H-CK9" secondAttribute="width" id="zmO-47-fSX"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g2i-WC-LsT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2if-aL-SUn"/>
-                            <constraint firstItem="7ak-24-Pl6" firstAttribute="centerX" secondItem="2zz-f0-9T4" secondAttribute="centerX" id="9Ia-Ab-8Bs"/>
-                            <constraint firstItem="ayY-KO-sZT" firstAttribute="centerX" secondItem="7ak-24-Pl6" secondAttribute="centerX" id="AQX-De-eyM"/>
-                            <constraint firstItem="g2i-WC-LsT" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="Agi-OM-9CI"/>
-                            <constraint firstItem="2zz-f0-9T4" firstAttribute="top" secondItem="g2i-WC-LsT" secondAttribute="bottom" id="UNF-al-Z9K"/>
-                            <constraint firstItem="g2i-WC-LsT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Wgv-TI-Qdi"/>
-                            <constraint firstItem="ayY-KO-sZT" firstAttribute="centerY" secondItem="7ak-24-Pl6" secondAttribute="centerY" id="Wjy-bD-MvX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2zz-f0-9T4" secondAttribute="bottom" id="Ymh-YH-JUe"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2zz-f0-9T4" secondAttribute="trailing" id="rGz-lX-KBE"/>
-                            <constraint firstItem="2zz-f0-9T4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wIg-Bj-sKa"/>
-                            <constraint firstItem="7ak-24-Pl6" firstAttribute="centerY" secondItem="2zz-f0-9T4" secondAttribute="centerY" id="xlf-0o-Fpq"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="g2i-WC-LsT" secondAttribute="trailing" id="yQs-cy-rvl"/>
+                            <constraint firstItem="kXU-0H-CK9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IWV-f7-plS"/>
+                            <constraint firstItem="TgG-Vl-TQk" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="MGy-ta-9Az"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kXU-0H-CK9" secondAttribute="trailing" id="aMq-yu-nlT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kXU-0H-CK9" secondAttribute="bottom" id="dbg-nF-kMt"/>
+                            <constraint firstItem="kXU-0H-CK9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tKh-MS-r69"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MovieTitle" largeTitleDisplayMode="always" id="rOw-nL-yUa">
@@ -64,10 +93,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="detailBodyErrorText" destination="ayY-KO-sZT" id="bvD-G2-Wfe"/>
-                        <outlet property="detailBodyView" destination="2zz-f0-9T4" id="XGU-Sg-HVL"/>
-                        <outlet property="indicator" destination="7ak-24-Pl6" id="dNA-1i-Mk4"/>
-                        <outlet property="movieImage" destination="g2i-WC-LsT" id="Iq6-8U-yuw"/>
+                        <outlet property="detailBodyErrorText" destination="rQP-Gd-6vc" id="n4J-eg-mcR"/>
+                        <outlet property="detailBodyView" destination="OkE-6j-PxN" id="EcT-wR-374"/>
+                        <outlet property="indicator" destination="3vn-id-sYZ" id="ebA-YU-eb3"/>
+                        <outlet property="movieImage" destination="TgG-Vl-TQk" id="9vh-HZ-gA2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,12 +9,10 @@ import Foundation
 
 final class MoviesRepository : MoviesRepositoryContracts {
     let moviesDataService : MoviesDataSource
-    let moviesLocalDataService : FavoritesLocalDataSource
     
     //MARK: - Inject MoviesDataService
-    init(moviesDataService : MoviesDataSource,moviesLocalDataService : FavoritesLocalDataSource) {
+    init(moviesDataService : MoviesDataSource) {
         self.moviesDataService = moviesDataService
-        self.moviesLocalDataService = moviesLocalDataService
     }
     
     func upComing(
@@ -60,33 +58,5 @@ final class MoviesRepository : MoviesRepositoryContracts {
         }
     }
     
-    func getFavorites() -> [Movie] {
-        return moviesLocalDataService.getFavorites()
-    }
-    
-    func addFavorite(item: Movie) -> Bool {
-        return moviesLocalDataService.addFavorite(item: item)
-    }
-    
-    func deleteFavorite(item : Movie) -> Bool {
-        return moviesLocalDataService.deleteFavorite(item: item)
-    }
-    
-    func deleteFavoriteById(id: Any) -> Bool {
-        let item = favoriteIsAvailable(primaryKey: id)
-        if let item = item {
-            return deleteFavorite(item: item)
-        }else{
-            return false
-        }
-    }
-    
-    func deleteAllFavorites() -> Bool {
-        return moviesLocalDataService.deleteAllFavorites()
-    }
-    
-    func favoriteIsAvailable(primaryKey: Any) -> Movie? {
-        return moviesLocalDataService.favoriteIsAvailable(primaryKey: primaryKey)
-    }
     
 }

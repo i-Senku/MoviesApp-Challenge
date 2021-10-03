@@ -23,10 +23,11 @@ extension UIViewController {
         message : String?,
         style : UIAlertController.Style = .alert,
         actionTitle : String?,
+        handler : ((UIAlertAction) -> Void)? = nil,
         actionStyle : UIAlertAction.Style = .default){
         
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: actionTitle, style: actionStyle, handler: nil)
+        let okAction = UIAlertAction(title: actionTitle, style: actionStyle, handler: handler)
         
         alertVC.addAction(okAction)
         present(alertVC, animated: true, completion: nil)

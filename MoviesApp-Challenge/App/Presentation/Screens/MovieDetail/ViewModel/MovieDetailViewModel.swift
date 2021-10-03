@@ -48,30 +48,6 @@ final class MovieDetailViewModel : MovieDetailViewModelContracts{
         }
     }
     
-    func addFavorite() {
-        guard let movie = movie else { return }
-        let status = movieRepository.addFavorite(item: movie)
-        if status{
-            notify(.added)
-        }
-    }
-    
-    func removeFavorite() {
-        guard let movie = movie else { return }
-        let status = movieRepository.deleteFavoriteById(id:movie.id)
-        if status {
-            notify(.removed)
-        }
-    }
-    
-    func favoriteItemIsAvailable() -> Movie? {
-        if let movie = movie {
-            return movieRepository.favoriteIsAvailable(primaryKey: movie.id)
-        }else {
-            return nil
-        }
-    }
-    
     private func notify(_ output : MovieDetailViewModelOutput){
         delegate?.handleOutput(output: output)
     }

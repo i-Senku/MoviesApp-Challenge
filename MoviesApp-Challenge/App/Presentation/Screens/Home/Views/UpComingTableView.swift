@@ -11,22 +11,12 @@ final class UpComingTableView: UITableView {
     
     var homeViewModel : HomeViewModelContracts?
     
-    private var myRefreshController : UIRefreshControl = {
-       let controller = UIRefreshControl()
-        controller.addTarget(self, action: #selector(pullToRefresh(sender:)), for: .valueChanged)
-        return controller
-    }()
-    
     override func awakeFromNib() {
         delegate = self
         dataSource = self
         registerCell(nibName: "UpComingCell", cellId: UpComingCell.cellId)
-        refreshControl = myRefreshController
     }
     
-    @objc private func pullToRefresh(sender : UIRefreshControl){
-        homeViewModel?.refresh()
-    }
 }
 
 extension UpComingTableView : UITableViewDelegate,UITableViewDataSource{

@@ -40,17 +40,6 @@ final class MovieDetailVC: UIViewController {
     
     @IBAction func showMenu(_ sender: Any) {
         let alertVC = UIAlertController(title: "Menu", message: nil, preferredStyle: .actionSheet)
-        let isAvailable = detailViewModel.favoriteItemIsAvailable() != nil
-        
-        let addFavoriteAction = UIAlertAction(title: isAvailable ? "Remove From Favorites" : "Add to Favorites", style: .default) {[weak self]  _ in
-            guard let self = self else {return}
-            
-            if isAvailable {
-                self.detailViewModel.removeFavorite()
-            }else{
-                self.detailViewModel.addFavorite()
-            }
-        }
         
         let showImdbAction = UIAlertAction(title: "Show in IMDB", style: .default) { [weak self] _ in
             guard let self = self else {return}
@@ -60,7 +49,6 @@ final class MovieDetailVC: UIViewController {
         let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: nil)
 
         cancelButton.setValue(UIColor.red, forKey: "titleTextColor")
-        alertVC.addAction(addFavoriteAction)
         alertVC.addAction(showImdbAction)
         alertVC.addAction(cancelButton)
         present(alertVC, animated: true, completion: nil)
@@ -90,12 +78,6 @@ extension MovieDetailVC : MovieDetailViewModelDelegate {
             }else{
                 indicator.stopAnimating()
             }
-            
-        case .added:
-            showBasicAlert(title: "ADDED", message: "Movie added to Favorites", actionTitle: "Cancel")
-            
-        case .removed:
-            showBasicAlert(title: "Removed", message: "Movie removed from Favorites", actionTitle: "Cancel")
         }
     }
     

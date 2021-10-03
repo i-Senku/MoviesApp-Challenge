@@ -16,6 +16,11 @@ protocol MovieDetailViewModelContracts {
     //MARK: - Functions
     func loadMovieDetail()
     func showIMDB()
+    
+    //MARK: - Local Functions
+    func addFavorite()
+    func removeFavorite()
+    func favoriteItemIsAvailable() -> Movie?
 }
 
 enum MovieDetailViewModelRoute {
@@ -26,6 +31,8 @@ enum MovieDetailViewModelOutput {
     case movieDetail(detail : MovieDetail)
     case errorMovieDetail(error : TheMovieError)
     case indicator(isAnimate : Bool)
+    case added
+    case removed
 }
 
 protocol MovieDetailViewModelDelegate : AnyObject{

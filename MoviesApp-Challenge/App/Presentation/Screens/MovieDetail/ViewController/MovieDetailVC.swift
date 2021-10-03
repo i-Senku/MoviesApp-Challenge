@@ -21,8 +21,7 @@ final class MovieDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         start()
     }
@@ -41,40 +40,55 @@ final class MovieDetailVC: UIViewController {
     
     @IBAction func showMenu(_ sender: Any) {
         let alertVC = UIAlertController(title: "Menu", message: nil, preferredStyle: .actionSheet)
+        let isAvailable = detailViewModel.favoriteItemIsAvailable() != nil
         
-        let showAction = UIAlertAction(title: "Show in IMDB", style: .default) {[weak self]  _ in
-            guard let self = self else {return}
-            self.detailViewModel.showIMDB()
+        let addFavoriteButton = UIAlertAction(title: isAvailable ? "Remove From Favorites" : "Add to Favorites", style: .default) { _ in
+            
+            if isAvailable {
+                self.detailViewModel.removeFavorite()
+            }else{
+                self.detailViewModel.addFavorite()
+            }
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
-        
-        alertVC.addAction(cancelAction)
-        alertVC.addAction(showAction)
+
+        let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+
+        cancelButton.setValue(UIColor.red, forKey: "titleTextColor")
+        alertVC.addAction(addFavoriteButton)
+        alertVC.addAction(cancelButton)
         present(alertVC, animated: true, completion: nil)
     }
     
 }
 
 extension MovieDetailVC : MovieDetailViewModelDelegate {
+    
     func handleOutput(output: MovieDetailViewModelOutput) {
         switch output {
+        
         case .movieDetail(detail: let detail):
             detailBodyView.populate(detail)
             if let url = detail.posterPath.originalImage(){
                 movieImage.kf.setImage(with: url)
             }
             detailBodyView.isHidden = false
+            
         case .errorMovieDetail(let error):
             detailBodyErrorText.isHidden = false
             detailBodyErrorText.text = error.statusMessage
+            
         case .indicator(let isAnimate):
             if isAnimate{
                 indicator.startAnimating()
             }else{
                 indicator.stopAnimating()
             }
+            
+        case .added:
+            showBasicAlert(title: "ADDED", message: "Movie added to Favorites", actionTitle: "Cancel")
+            
+        case .removed:
+            showBasicAlert(title: "Removed", message: "Movie removed from Favorites", actionTitle: "Cancel")
         }
     }
     

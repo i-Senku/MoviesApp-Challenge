@@ -99,7 +99,8 @@ final class HomeViewModel : HomeViewModelContracts{
     //MARK: - Select Movie From UpComing
     func didSelectUpComing(indexPath: IndexPath) {
         let movie = upComingMovies[indexPath.row]
-        let viewModel = MovieDetailViewModel(movieRepository: MoviesRepository(moviesDataService: MoviesService()))
+        let moviesRepository = MoviesRepository(moviesDataService: MoviesService(), moviesLocalDataService: FavoritesLocalService())
+        let viewModel = MovieDetailViewModel(movieRepository:moviesRepository)
         viewModel.movie = movie
         delegate?.navigate(navigation: .movieDetail(viewModel: viewModel))
     }
@@ -107,7 +108,7 @@ final class HomeViewModel : HomeViewModelContracts{
     //MARK: - Select Movie From NowPlaying
     func didSelectNowPlaying(indexPath: IndexPath) {
         let movie = nowPlayingMovies[indexPath.row]
-        let viewModel = MovieDetailViewModel(movieRepository: MoviesRepository(moviesDataService: MoviesService()))
+        let viewModel = MovieDetailViewModel(movieRepository:AppRepository.shared.movieRepository)
         viewModel.movie = movie
         delegate?.navigate(navigation: .movieDetail(viewModel: viewModel))
     }

@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeVC : UIViewController {
     
-    var homeViewModel : HomeViewModelContracts = HomeViewModel(moviesRepository: MoviesRepository(moviesDataService: MoviesService()))
+    var homeViewModel : HomeViewModelContracts = HomeViewModel(moviesRepository:AppRepository.shared.movieRepository)
     
     @IBOutlet weak var sliderErrorText: UILabel!
     @IBOutlet weak var sliderIndicator: UIActivityIndicatorView!

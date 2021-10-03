@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MoviesService  : MoviesDataService{
+final class MoviesService  : MoviesDataSource{
     
     func upComing(
         language: String,

@@ -6,24 +6,24 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Movie : BaseResult , Decodable {
+class Movie : Object, BaseResult, Decodable {
     
-    let adult : Bool
-    let backdrop_path : String?
-    let genre_ids : [Int]
-    let id: Int
-    
-    let originalLanguage: String
-    let originalTitle: String
-    let overview: String
-    let popularity: Double
-    let posterPath: String?
-    let releaseDate: String
-    let title: String
-    let video : Bool
-    let voteAverage: Double
-    let voteCount: Int
+    @Persisted var adult : Bool
+    @Persisted var backdrop_path : String?
+    @Persisted var genre_ids : List<Int>
+    @Persisted var id: Int
+    @Persisted var originalLanguage: String
+    @Persisted var originalTitle: String
+    @Persisted var overview: String
+    @Persisted var popularity: Double
+    @Persisted var posterPath: String?
+    @Persisted var releaseDate: String
+    @Persisted var title: String
+    @Persisted var video : Bool
+    @Persisted var voteAverage: Double
+    @Persisted var voteCount: Int
     
     enum CodingKeys: String, CodingKey {
         case adult = "adult"
@@ -40,6 +40,10 @@ struct Movie : BaseResult , Decodable {
         case video = "video"
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+    }
+    
+    override class func primaryKey() -> String? {
+        return "id"
     }
     
 }

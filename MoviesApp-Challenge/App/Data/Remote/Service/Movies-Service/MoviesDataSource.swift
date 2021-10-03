@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MoviesDataService {
+protocol MoviesDataSource {
     func upComing(language : String,page : Int,completion : @escaping (Result<BaseTheMovie<Movie>,NetworkError>) -> Void)
     
     func nowPlaying(language : String,page : Int,completion : @escaping (Result<BaseTheMovie<Movie>,NetworkError>) -> Void)

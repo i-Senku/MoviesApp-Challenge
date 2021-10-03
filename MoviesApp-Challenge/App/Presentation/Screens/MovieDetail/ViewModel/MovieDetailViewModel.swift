@@ -8,6 +8,7 @@
 import Foundation
 
 final class MovieDetailViewModel : MovieDetailViewModelContracts{
+    
     weak var delegate: MovieDetailViewModelDelegate?
     var movieRepository: MoviesRepositoryContracts
     var movieDetail: MovieDetail?
@@ -44,6 +45,30 @@ final class MovieDetailViewModel : MovieDetailViewModelContracts{
             if let url =  URL(string: "https://www.imdb.com/title/\(imdbId)/"){
                 delegate?.navigate(to: .imdb(url))
             }
+        }
+    }
+    
+    func addFavorite() {
+        guard let movie = movie else { return }
+        let status = movieRepository.addFavorite(item: movie)
+        if status{
+            notify(.added)
+        }
+    }
+    
+    func removeFavorite() {
+        guard let movie = movie else { return }
+        let status = movieRepository.deleteFavoriteById(id:movie.id)
+        if status {
+            notify(.removed)
+        }
+    }
+    
+    func favoriteItemIsAvailable() -> Movie? {
+        if let movie = movie {
+            return movieRepository.favoriteIsAvailable(primaryKey: movie.id)
+        }else {
+            return nil
         }
     }
     

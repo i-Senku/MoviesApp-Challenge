@@ -1,6 +1,6 @@
 # MoviesApp-Challenge
 
-İt's Movie app that using the TheMovieDB API.
+It's Movie app that using the TheMovieDB API.
 
 # Features
 * Pull to refresh

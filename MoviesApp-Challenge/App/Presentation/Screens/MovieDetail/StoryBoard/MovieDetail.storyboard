@@ -23,19 +23,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TgG-Vl-TQk">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkE-6j-PxN" customClass="DetailBodyView" customModule="MoviesApp_Challenge" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="269" width="414" height="505"/>
+                                                <rect key="frame" x="0.0" y="358.5" width="414" height="415.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQP-Gd-6vc">
-                                                        <rect key="frame" x="186" y="242" width="42" height="21"/>
+                                                        <rect key="frame" x="186" y="197" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3vn-id-sYZ">
-                                                        <rect key="frame" x="197" y="242.5" width="20" height="20"/>
+                                                        <rect key="frame" x="197" y="197.5" width="20" height="20"/>
                                                     </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,7 +73,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kXU-0H-CK9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IWV-f7-plS"/>
-                            <constraint firstItem="TgG-Vl-TQk" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="MGy-ta-9Az"/>
+                            <constraint firstItem="TgG-Vl-TQk" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.4" id="MGy-ta-9Az"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kXU-0H-CK9" secondAttribute="trailing" id="aMq-yu-nlT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kXU-0H-CK9" secondAttribute="bottom" id="dbg-nF-kMt"/>
                             <constraint firstItem="kXU-0H-CK9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tKh-MS-r69"/>

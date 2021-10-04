@@ -52,7 +52,6 @@ extension SliderCollectionView : UICollectionViewDelegate,UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SliderCell.cellId, for: indexPath) as! SliderCell
-        cell.backgroundColor = .blue
         let movie = homeViewModel?.nowPlayingMovies[indexPath.row]
         cell.populate(movie: movie)
         return cell
